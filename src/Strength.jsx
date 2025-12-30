@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Card, CardContent, Typography, Grid } from "@mui/material";
 import pattern7 from "./assets/pattern7.png";
-import strength1 from "./assets/Strength1.png";
+import strength1 from "./assets/strength1.png";
 const skills = [
 "Problem-solving", "UI/UX focused", "Fast learner", "Team collaboration"
 ];
