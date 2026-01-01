@@ -32,7 +32,7 @@ function Education() {
           container
           direction="row"
           alignItems="center"
-          ml={60}
+          ml={{md:60,xs:25}}
           justifyContent="space-between"
         >
         <Grid item>
@@ -42,7 +42,7 @@ function Education() {
     spacing={1}
     justifyContent={{ xs: "center", md: "flex-start" }}
     sx={{
-      ml: { xs: -18, md: 0 }, 
+      ml: { xs: -14, md: 0,sm:8 }, 
     }}
   >
     <Grid item>
@@ -50,7 +50,7 @@ function Education() {
         component="img"
         src={educationicon}
         alt="education"
-        sx={{ width: 40, height: 40 }}
+        sx={{ width: {xs:30,md:40}, height: {xs:30,md:40} }}
       />
     </Grid>
 
@@ -61,6 +61,7 @@ function Education() {
         sx={{
           color: "primary.main",
           textAlign: { xs: "center", md: "left" },
+          fontSize: { xs: "1.1rem", sm: "1.25rem", md: "1.5rem" } 
         }}
       >
         EDUCATION
@@ -76,8 +77,8 @@ function Education() {
               src={education}
               alt="education"
               sx={{
-                width: 120,
-                height: 120,
+                width: {xs:80,md:120},
+                height: {xs:80,md:120},
                 borderRadius: "50%",
                 objectFit: "cover",
               }}
@@ -89,7 +90,7 @@ function Education() {
           elevation={4}
           sx={{
             mt: 2,
-            ml: { md: 2, xs: 2 },
+            ml: { md: 2, xs: 1 },
             width: { md: "98%", xs: "97%" },
             transition: "all 0.3s ease-in-out",
             "&:hover": {
@@ -99,21 +100,73 @@ function Education() {
           }}
         >
           <Box sx={{ p: 3 }}>
-            <Typography variant="subtitle1" fontWeight="bold">
-              Arunai Engineering College (2019-2023)
-            </Typography>
-            <Typography variant="subtitle1" fontWeight="bold">
-              {" "}
-              B.E- Electronics and Communication Engineering
-            </Typography>
-            <Typography variant="subtitle1" fontWeight="bold">
-              CGPA: 8.9
-            </Typography>
-            My academic journey strengthened my analytical thinking,
-            problem-solving abilities, and understanding of core engineering
-            principles. The strong academic foundation I gained has helped me
-            develop a disciplined and detail-oriented approach to learning and
-            technology. This background supports my continuous growth.
+     <Typography 
+  variant="subtitle1" 
+  fontWeight="bold"
+  sx={{  
+    fontSize: { 
+      xs: "0.9rem",
+      sm: "0.9rem",
+      md: "1rem"
+    },
+    textAlign: { xs:  "center", md: "center" } 
+  }}
+>
+  Arunai Engineering College  - (2019-2023)
+</Typography>
+
+<Typography 
+  variant="subtitle1" 
+  fontWeight="bold" 
+  sx={{   
+    fontSize: { 
+      xs: "0.9rem",
+      sm: "0.9rem",
+      md: "1rem"
+    },
+    textAlign: { xs:  "center", md: "center" } 
+  }}
+>
+  B.E- Electronics and Communication Engineering
+</Typography>
+
+<Typography 
+  variant="subtitle1" 
+  fontWeight="bold" 
+  sx={{   
+    fontSize: { 
+      xs: "0.9rem",
+      sm: "0.9rem",
+      md: "1rem"
+    },
+    textAlign: { xs: "center", md: "center" } // Left on mobile, center on desktop
+  }}
+>
+  CGPA: 8.9
+</Typography>
+         <Typography
+  sx={{
+    textAlign: "justify",
+    fontSize: {
+      xs: "0.85rem",
+      sm: "0.9rem",
+      md: "1rem",
+    },
+    lineHeight: { xs: 1.5, md: 1.6 },
+
+    // 🔧 Fix word spacing issue on mobile
+    wordSpacing: { xs: "-0.05em", sm: "normal" },
+    textJustify: "inter-word",
+    hyphens: "auto",
+  }}
+>
+  My academic journey strengthened my analytical thinking,
+  problem-solving abilities, and understanding of core engineering
+  principles. The strong academic foundation I gained has helped me
+  develop a disciplined and detail-oriented approach to learning and
+  technology. This background supports my continuous growth.
+</Typography>
+
           </Box>
         </Card>
       </Box>

@@ -47,7 +47,7 @@ export default function Strength() {
     >
           <Grid container direction="row" justifyContent="center">
             <Box component="img" src={strength1} sx={{ width: 30 }} alt="skill" />
-  <Typography variant="h6" fontWeight="bold"    sx={{ color: "primary.main" }}>
+  <Typography variant="h6" fontWeight="bold"    sx={{ color: "primary.main",fontSize: { xs: "1.1rem", sm: "1.25rem", md: "1.5rem" }  }}>
             STRENGTH
           </Typography>
       
@@ -67,12 +67,12 @@ export default function Strength() {
    background: gradients[index % gradients.length],
                 color: "#fff",
                 fontWeight: "bold",
-                fontSize: { xs: "1rem", sm: "1.2rem", md: "1.4rem" },
+                fontSize: { xs: "0.9rem", sm: "1.2rem", md: "1.4rem" },
                 animation: `bounce 2s ${index * 0.1}s infinite`,
               }}
             >
               <CardContent sx={{ position: "relative", zIndex: 1, width: "100%" }}>
-                <Typography variant="h6" color="blue">{skill}</Typography>
+                <Typography variant="h6" color="blue" sx={{ fontSize: { xs: "0.9rem", sm: "1.2rem", md: "1.4rem" }}}>{skill}</Typography>
               </CardContent>
             </Card>
           </Grid>

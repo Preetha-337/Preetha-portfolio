@@ -45,7 +45,7 @@ function Navbar() {
 
    
       <Drawer anchor="left" open={open} onClose={() => setOpen(false)}>
-        <Box sx={{ width: 250, background: "linear-gradient(135deg, #667eea, #764ba2)", height: "100%",}}>
+        <Box sx={{ width: 150, background: "linear-gradient(135deg, #667eea, #764ba2)", height: "100%",}}>
           <List>
             {menuItems.map((item) => (
               <ListItem
