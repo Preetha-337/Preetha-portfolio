@@ -21,8 +21,10 @@ function AllData() {
         minHeight: "100vh",
         overflowX: "hidden", // Prevent horizontal scrolling
         background: "linear-gradient(135deg, #c3dafe, #e9d5ff)",
-        width: "100%",
+        width: "100vw", // Use 100vw for full viewport width
         maxWidth: "100vw", // Ensure it doesn't exceed viewport
+        left: 0,
+        right: 0,
         "&::before": {
           content: '""',
           position: "absolute",
@@ -34,9 +36,12 @@ function AllData() {
     >
       {/* Fixed AppBar with responsive settings */}
       <AppBar 
-        position={isMobile ? "sticky" : "fixed"} // Use sticky on mobile for better UX
+        position="fixed"
         sx={{ 
           top: 0,
+          left: 0,
+          right: 0,
+          width: "100vw", // Full viewport width
           background: "linear-gradient(135deg, #667eea, #764ba2)",
           zIndex: 1200,
         }}
@@ -45,7 +50,9 @@ function AllData() {
           display: "flex", 
           justifyContent: "space-between",
           minHeight: { xs: 56, sm: 64 }, // Responsive toolbar height
-          px: { xs: 2, sm: 3 } // Responsive padding
+          px: { xs: 2, sm: 3 }, // Responsive padding
+          width: "100%",
+          maxWidth: "100%",
         }}>
           <Typography 
             variant={isMobile ? "subtitle1" : "h6"} 
@@ -63,16 +70,21 @@ function AllData() {
       {/* Add padding to account for AppBar height */}
       <Box sx={{ 
         pt: { xs: "56px", sm: "64px" }, // Matches toolbar height
-        width: "100%",
+        width: "100vw", // Full viewport width
         maxWidth: "100vw",
-        overflow: "hidden"
+        overflowX: "hidden", // Prevent horizontal scroll
+        position: "relative",
+        left: 0,
+        right: 0,
       }}>
         <Container 
-          maxWidth="lg" // Limits max width on large screens
+          maxWidth={false} // Remove max width restriction
+          disableGutters // Remove default padding
           sx={{
-            width: "100%",
-            maxWidth: "100%", // Allow full width on mobile
-            px: { xs: 2, sm: 3, md: 4 }, // Responsive padding
+            width: "100vw", // Full width
+            maxWidth: "100%",
+            px: { xs: 0, sm: 0, md: 0 }, // Remove all padding from Container
+            mx: 0, // Remove margin
             overflow: "hidden",
             "& > *": {
               width: "100%",
@@ -80,7 +92,11 @@ function AllData() {
             }
           }}
         >
-          <Stack spacing={4} sx={{ width: "100%", maxWidth: "100%" }}>
+          <Stack spacing={4} sx={{ 
+            width: "100%", 
+            maxWidth: "100%",
+            px: { xs: 2, sm: 3, md: 4 }, // Add padding directly to Stack instead
+          }}>
             <Introduction />
             <Education />
             <Experience />
