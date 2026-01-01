@@ -76,7 +76,7 @@ function Projects() {
             <Box component="img" src={Project} sx={{ width: 30 }} />
             <Typography
               variant="h6"
-              fontWeight={{md:"bold",xs:"bold",sm:"bold"}}
+              fontWeight="bold"
               sx={{ color: "primary.main" }}
             >
               PROJECTS
@@ -123,7 +123,7 @@ function Projects() {
 >
   <Typography 
     variant="subtitle1" 
-    fontWeight={{md:"bold",xs:"bold",sm:"bold"}}
+    fontWeight="bold"
     sx={{ 
       fontSize: { 
         xs: "0.9rem", 
@@ -460,7 +460,7 @@ function Projects() {
 >
   <Typography 
     variant="subtitle1" 
-    fontWeight={{md:"bold",xs:"bold",sm:"bold"}}
+    fontWeight="bold"
     sx={{ 
       fontSize: { xs: "0.9rem", sm: "0.95rem", md: "1rem" },
       mb: { xs: 0.5, sm: 1 },
@@ -574,7 +574,7 @@ function Projects() {
               >
               <Typography 
   variant="subtitle1" 
-fontWeight={{md:"bold",xs:"bold",sm:"bold"}}
+  fontWeight="bold"
   sx={{ 
     fontSize: { xs: "0.9rem", sm: "0.95rem", md: "1rem" },
     mb: { xs: 0.5, sm: 1 },
@@ -835,7 +835,7 @@ fontWeight={{md:"bold",xs:"bold",sm:"bold"}}
               >
              <Typography 
   variant="subtitle1" 
- fontWeight={{md:"bold",xs:"bold",sm:"bold"}}
+  fontWeight="bold"
   sx={{ 
     fontSize: { xs: "0.9rem", sm: "0.95rem", md: "1rem" },
     mb: { xs: 0.5, sm: 1 },
