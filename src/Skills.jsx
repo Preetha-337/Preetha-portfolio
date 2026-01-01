@@ -171,7 +171,7 @@ function Skills() {
                 variant="subtitle1" 
                 fontWeight="bold" 
                 textAlign={{ xs: "center", md: "left" }}
-                sx={{ fontSize: { xs: "0.8rem", sm: "0.95rem", md: "1rem" } }}
+                sx={{ fontSize: { xs: "0.7rem", sm: "0.95rem", md: "1rem" } }}
               >
                 Tools & Platforms
               </Typography>
@@ -203,7 +203,7 @@ function Skills() {
                 variant="subtitle1" 
                 fontWeight="bold" 
                 textAlign={{ xs: "center", md: "left" }}
-                sx={{ fontSize: { xs: "0.8rem", sm: "0.95rem", md: "1rem" } }}
+                sx={{ fontSize: { xs: "0.7rem", sm: "0.95rem", md: "1rem" } }}
               >
                 Core Concepts
               </Typography>
