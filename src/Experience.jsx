@@ -32,7 +32,8 @@ function Experience() {
        <Box sx={{ position: "relative", zIndex: 1, width: "100%" }}>
       <Grid container direction="row" justifyContent="center">
         <Box component="img" src={experience} sx={{ width: 35 }} alt="skill" />
-        <Typography variant="h6" fontWeight="bold"    sx={{ color: "primary.main",fontSize: { xs: "1.1rem", sm: "1.25rem", md: "1.5rem" }  }}>
+        <Typography variant="h6" fontWeight={{md:"bold",xs:"bold",sm:"bold"}}
+            sx={{ color: "primary.main",fontSize: { xs: "1.1rem", sm: "1.25rem", md: "1.5rem" }  }}>
           EXPERIENCE
         </Typography>
       </Grid>
@@ -63,7 +64,7 @@ function Experience() {
             width={{md:"20%",xs:"50%"}}
              src={Aviarlogo}/>
              </Box>
-          <Typography variant="subtitle1" fontWeight="bold" sx={{    textAlign: { xs:  "center", md: "center" } , fontSize: { 
+          <Typography variant="subtitle1" fontWeight={{md:"bold",xs:"bold",sm:"bold"}} sx={{    textAlign: { xs:  "center", md: "center" } , fontSize: { 
       xs: "0.9rem",
       sm: "0.9rem",
       md: "1rem"

@@ -47,7 +47,7 @@ export default function Strength() {
     >
           <Grid container direction="row" justifyContent="center">
             <Box component="img" src={strength1} sx={{ width: 30 }} alt="skill" />
-  <Typography variant="h6" fontWeight="bold"    sx={{ color: "primary.main",fontSize: { xs: "1.1rem", sm: "1.25rem", md: "1.5rem" }  }}>
+  <Typography variant="h6" fontWeight={{md:"bold",xs:"bold",sm:"bold"}}   sx={{ color: "primary.main",fontSize: { xs: "1.1rem", sm: "1.25rem", md: "1.5rem" }  }}>
             STRENGTH
           </Typography>
       
@@ -66,7 +66,7 @@ export default function Strength() {
                 justifyContent: "center",
    background: gradients[index % gradients.length],
                 color: "#fff",
-                fontWeight: "bold",
+               fontWeight:{md:"bold",xs:"bold",sm:"bold"},
                 fontSize: { xs: "0.9rem", sm: "1.2rem", md: "1.4rem" },
                 animation: `bounce 2s ${index * 0.1}s infinite`,
               }}

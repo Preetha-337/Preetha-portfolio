@@ -57,7 +57,7 @@ function Education() {
     <Grid item>
       <Typography
         variant="h6"
-        fontWeight="bold"
+       fontWeight={{md:"bold",xs:"bold",sm:"bold"}}
         sx={{
           color: "primary.main",
           textAlign: { xs: "center", md: "left" },
@@ -102,7 +102,7 @@ function Education() {
           <Box sx={{ p: 3 }}>
      <Typography 
   variant="subtitle1" 
-  fontWeight="bold"
+ fontWeight={{md:"bold",xs:"bold",sm:"bold"}}
   sx={{  
     fontSize: { 
       xs: "0.9rem",
@@ -117,7 +117,7 @@ function Education() {
 
 <Typography 
   variant="subtitle1" 
-  fontWeight="bold" 
+fontWeight={{md:"bold",xs:"bold",sm:"bold"}}
   sx={{   
     fontSize: { 
       xs: "0.9rem",
@@ -132,7 +132,7 @@ function Education() {
 
 <Typography 
   variant="subtitle1" 
-  fontWeight="bold" 
+ fontWeight={{md:"bold",xs:"bold",sm:"bold"}}
   sx={{   
     fontSize: { 
       xs: "0.9rem",

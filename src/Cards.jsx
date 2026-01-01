@@ -71,7 +71,7 @@ function Cards() {
         {/* Quote */}
         <Typography
           variant="h6"
-          fontWeight="bold"
+          fontWeight={{md:"bold",xs:"bold",sm:"bold"}}
           sx={{
             background: "linear-gradient(90deg, #667eea, #764ba2)",
             WebkitBackgroundClip: "text",
@@ -219,7 +219,7 @@ function Cards() {
             >
               <Typography
                 variant="h5"
-                fontWeight="bold"
+                fontWeight={{md:"bold",xs:"bold",sm:"bold"}}
                 gutterBottom
                 sx={{
                      fontSize: { 

@@ -66,7 +66,7 @@ function Quotes() {
                                 variant="subtitle1"
                                 sx={{
                                     color: "#fff",
-                                    fontWeight: "bold",
+                                  fontWeight:{md:"bold",xs:"bold",sm:"bold"},
                                     fontSize: { 
                                         xs: "0.7rem",   // Smaller font on mobile
                                         sm: "0.85rem",  // Medium on tablet

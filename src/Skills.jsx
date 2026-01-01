@@ -66,7 +66,7 @@ function Skills() {
           <Box component="img" src={skill} sx={{ width: { xs: 24, sm: 26, md: 28 } }} alt="skill" />
           <Typography
             variant="h6"
-            fontWeight="bold"
+            fontWeight={{md:"bold",xs:"bold",sm:"bold"}}
             sx={{ color: "primary.main", fontSize: { xs: "1.1rem", sm: "1.25rem", md: "1.5rem" } }}
           >
             SKILLS
@@ -84,7 +84,7 @@ function Skills() {
             <Card sx={cardStyle}>
               <Typography 
                 variant="subtitle1" 
-                fontWeight="bold" 
+               fontWeight={{md:"bold",xs:"bold",sm:"bold"}}
                 textAlign={{ xs: "center", md: "left" }}
                 sx={{ fontSize: { xs: "0.6rem",sm: "0.95rem", md: "1rem" } }}
               >
@@ -108,7 +108,7 @@ function Skills() {
 
               <Typography 
                 variant="subtitle2" 
-                fontWeight="bold" 
+                fontWeight={{md:"bold",xs:"bold",sm:"bold"}}
                 mt={2} 
                 textAlign={{ xs: "center", md: "left" }}
                 sx={{ fontSize: { xs: "0.6rem",sm: "0.95rem", md: "0.95rem" } }}
@@ -137,7 +137,7 @@ function Skills() {
             <Card sx={cardStyle}>
               <Typography 
                 variant="subtitle1" 
-                fontWeight="bold" 
+                fontWeight={{md:"bold",xs:"bold",sm:"bold"}}
                 textAlign={{ xs: "center", md: "left" }}
                 sx={{ fontSize: { xs: "0.7rem", sm: "0.95rem", md: "1rem" } }}
               >
@@ -169,7 +169,7 @@ function Skills() {
             <Card sx={cardStyle} >
               <Typography 
                 variant="subtitle1" 
-                fontWeight="bold" 
+                fontWeight={{md:"bold",xs:"bold",sm:"bold"}}
                 textAlign={{ xs: "center", md: "left" }}
                 sx={{ fontSize: { xs: "0.7rem", sm: "0.95rem", md: "1rem" } }}
               >
@@ -201,7 +201,7 @@ function Skills() {
             <Card sx={cardStyle}>
               <Typography 
                 variant="subtitle1" 
-                fontWeight="bold" 
+               fontWeight={{md:"bold",xs:"bold",sm:"bold"}}
                 textAlign={{ xs: "center", md: "left" }}
                 sx={{ fontSize: { xs: "0.7rem", sm: "0.95rem", md: "1rem" } }}
               >
