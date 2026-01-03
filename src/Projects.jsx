@@ -678,8 +678,8 @@ function Projects() {
                     elevation={5}
                     sx={{
                       ml: { xs: 0 },
-                      width: { xs: 300, md: 280 },
-                      height: { xs: 200, md: 230 },
+                      width: { xs: 280, md: 280 },
+                      height: { xs: 300, md: 230 },
                       borderRadius: 2,
                       overflow: "hidden",
                       // cursor: "pointer",
@@ -701,8 +701,8 @@ function Projects() {
                   <Paper
                     elevation={5}
                     sx={{
-                      width: { xs: 300, md: 280 },
-                      height: { xs: 200, md: 230 },
+                      width: { xs: 280, md: 280 },
+                      height: { xs: 300, md: 230 },
                       borderRadius: 2,
                       overflow: "hidden",
                       // cursor: "pointer",
