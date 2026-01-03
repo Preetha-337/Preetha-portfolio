@@ -108,7 +108,7 @@ function Projects() {
   elevation={4}
    sx={{
     p: { xs: 1.5, sm: 2, md: 3 },
-    width: { xs: "90%", sm: "100%", md: 420 },
+    width: { xs: "95%", sm: "100%", md: 420 },
     maxWidth: { xs: "100%", md: 420 ,sm:600},
     mx: { xs: "auto", md: "auto" },
     mt: { xs: 2, md: 0 },
