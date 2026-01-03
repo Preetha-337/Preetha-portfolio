@@ -98,21 +98,21 @@ function Projects() {
   md={6}
   container
   direction={{ xs: "column", md: "row",sm:"row" }}
-  spacing={{ xs: 2, md: 2 }}
+  spacing={{ xs: 2, md: 3}}
   alignItems="stretch"
   justifyContent="flex-start"
 >
   {/* Card Section - Takes 5 columns on desktop */}
-  <Grid item xs={12} md={5} sx={{ display: "flex" }}>
+  <Grid item xs={12} md={5} sx={{ display: "flex",  ml:{sm:4,md:0},width:{sm:700,md:"40%"} }}>
 <Card
   elevation={4}
    sx={{
     p: { xs: 1.5, sm: 2, md: 3 },
-    width: { xs: "90%", sm: "90%", md: 420 },
-    maxWidth: { xs: "100%", md: 420 },
+    width: { xs: "90%", sm: "100%", md: 420 },
+    maxWidth: { xs: "100%", md: 420 ,sm:600},
     mx: { xs: "auto", md: "auto" },
     mt: { xs: 2, md: 0 },
-    ml:{xs:0,sm:5},
+    ml:{xs:0,sm:0},
     // alignSelf: "center",
     transition: "all 0.3s ease-in-out",
     "&:hover": { 
@@ -151,7 +151,7 @@ function Projects() {
             sx: { 
               fontSize: { 
                 xs: "0.8rem", 
-                sm: "0.9rem",    // Larger on tablet
+                sm: "0.9rem",   
                 md: "0.85rem" 
               },
               // textAlign: { xs: "center", sm: "center", md: "left" }
@@ -212,7 +212,7 @@ function Projects() {
       container
       direction="row"
       wrap="nowrap"
-      spacing={{ xs: 1.5, sm: 2, md: 2 }}
+      spacing={{ xs: 1.5, sm: 2, md: 3 }}
       sx={{
         overflowX: "auto",
         flexWrap: "nowrap",
@@ -241,7 +241,7 @@ function Projects() {
         <Paper
           elevation={5}
           sx={{
-            width: { xs: 160, sm: 300, md: 270 },
+            width: { xs: 130, sm: 300, md: 270 },
             height: { xs: 180, sm: 200, md: 230 },
             borderRadius: 2,
             overflow: "hidden",
@@ -274,7 +274,7 @@ function Projects() {
             component="img"
             src={intern}
             sx={{
-              width: { xs: 180, md: 250,sm:380 },
+              width: { xs: 130, md: 270,sm:380 },
               height: "100%",
               objectFit: "cover",
             }}
@@ -282,12 +282,11 @@ function Projects() {
         </Paper>
       </Grid>
 
-      {/* Image 2 */}
       <Grid item sx={{ display: "flex", alignItems: "center" }}>
         <Paper
           elevation={5}
           sx={{
-            width: { xs: 160, sm: 300, md: 290 },
+            width: { xs: 130, sm: 300, md: 300 },
             height: { xs: 180, sm: 200, md: 230 },
             borderRadius: 2,
             overflow: "hidden",
@@ -299,7 +298,7 @@ function Projects() {
               boxShadow: { xs: 8, md: 12 },
               transform: { md: "translateY(-6px)" },
             },
-            // Mobile zoom effect
+         
             "@media (max-width: 900px)": {
               "&:active": {
                 zIndex: 9999,
@@ -320,7 +319,7 @@ function Projects() {
             component="img"
             src={Aviar}
             sx={{
-              width: { xs: 180, md: 250,sm:350 },
+              width: { xs: 130, md: 300,sm:300 },
               height: "100%",
               objectFit: "cover",
             }}
@@ -339,6 +338,7 @@ function Projects() {
             mt={5}
             gap={4}
             justifyContent="space-between"
+           
           >
             
             <Grid item xs={12} md={7} order={{ xs: 2, md: 1 }}>
@@ -348,14 +348,14 @@ function Projects() {
                 alignItems="flex-start"
                 spacing={4}
               >
-                <Grid item alignItems={{md:"center"}} ml={{md:15} }>
+                <Grid item alignItems={{md:"center"}} ml={{md:15,xs:0} }>
                   <Paper
                     elevation={5}
                     sx={{
-                      width: { xs: 180, md: 250,sm:400 },
+                      width: { xs: 200, md: 250,sm:400 },
                       height: { xs: 200, md: 230 },
                       borderRadius: 2,
-                      ml: { xs: 8, md: 4,sm:15 },
+                      ml: { xs: 6, md: 4,sm:15 },
                    
                       overflow: "hidden",
                       // cursor: "pointer",
@@ -370,7 +370,7 @@ function Projects() {
                       component="img"
                       src={electronics}
                       sx={{
-                         width: { xs: 180, md: 250,sm:350 },
+                         width: { xs: 200, md: 250,sm:350 },
                             ml: { sm: 5,md:0},
                         height: { xs: 200, md: 230 },
                         borderRadius: 2,
@@ -384,7 +384,7 @@ function Projects() {
                     <Paper
                       elevation={5}
                       sx={{
-                        width: { xs: 130, md: 250,sm:300 },
+                        width: { xs: 110, md: 250,sm:300 },
                         height: { xs: 200, md: 230 },
                         borderRadius: 2,
                         ml: { xs: 1, md: 2 },
@@ -413,7 +413,7 @@ function Projects() {
                     <Paper
                       elevation={5}
                       sx={{
-                         width: { xs: 130, md: 250,sm:300 },
+                         width: { xs: 110, md: 250,sm:300 },
                         height: { xs: 200, md: 230 },
                         borderRadius: 2,
                         overflow: "hidden",
@@ -538,7 +538,7 @@ function Projects() {
 
           <Grid
             container
-            spacing={4}
+            spacing={7}
             mt={2}
             p={2}
             // alignItems="center"
@@ -550,7 +550,7 @@ function Projects() {
               item
               xs={12}
               md={6}
-              spacing={2}
+              spacing={7}
               p={1}
               gap={4}
               container
@@ -670,7 +670,7 @@ function Projects() {
 </List>
               </Card>
 
-              <Grid container spacing={2}>
+              <Grid container spacing={4}>
                 <Grid item xs={6}>
                   <Paper
                     elevation={5}
