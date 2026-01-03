@@ -45,7 +45,7 @@ function Projects() {
       sx={{
         position: "relative",
         backgroundImage: `url(${pattern1})`,
-
+     
         "&::before": {
           content: '""',
           position: "absolute",
@@ -212,7 +212,7 @@ function Projects() {
       container
       direction="row"
       wrap="nowrap"
-      spacing={{ xs: 1.5, sm: 2, md: 3 }}
+      spacing={{ xs: 1.5, sm: 2, md: 4 }}
       sx={{
         overflowX: "auto",
         flexWrap: "nowrap",
@@ -333,12 +333,12 @@ function Projects() {
           <Grid
             container
             direction="row"
-            spacing={4}
+            spacing={2}
             p={2}
             mt={5}
             gap={4}
             justifyContent="space-between"
-           
+         
           >
             
             <Grid item xs={12} md={7} order={{ xs: 2, md: 1 }}>
@@ -441,7 +441,9 @@ function Projects() {
               </Grid>
             </Grid>
 
-            <Grid item xs={12} md={5} order={{ xs: 1, md: 2 }}>
+            <Grid item xs={12} md={5} sx={{ mr: { md: 20 } }}
+
+ order={{ xs: 1, md: 2}}>
           <Card
   elevation={4}
   sx={{
@@ -670,13 +672,13 @@ function Projects() {
 </List>
               </Card>
 
-              <Grid container spacing={4}>
+              <Grid container spacing={5}>
                 <Grid item xs={6}>
                   <Paper
                     elevation={5}
                     sx={{
                       ml: { xs: 0 },
-                      width: { xs: 300, md: 220 },
+                      width: { xs: 300, md: 280 },
                       height: { xs: 200, md: 230 },
                       borderRadius: 2,
                       overflow: "hidden",
@@ -699,7 +701,7 @@ function Projects() {
                   <Paper
                     elevation={5}
                     sx={{
-                      width: { xs: 300, md: 220 },
+                      width: { xs: 300, md: 280 },
                       height: { xs: 200, md: 230 },
                       borderRadius: 2,
                       overflow: "hidden",
