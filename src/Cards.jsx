@@ -253,7 +253,7 @@ function Cards() {
                   lineHeight: { xs: 1.4, sm: 1.5, md: 1.6 },
                 }}
               >
-                Frontend React Developer • UI/UX Focused • Performance Driven
+                MERN Stack Developer • UI/UX Focused • Performance Driven
               </Typography>
             </CardContent>
           </Card>
