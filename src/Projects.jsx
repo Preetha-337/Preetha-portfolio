@@ -649,7 +649,7 @@ function Projects() {
   
   <ListItem disablePadding sx={{ py: 0.5 }}>
     <Link
-      href="https://www.theredastudio.com/"
+      href="https://theredastudio.com/"
       target="_blank"
       rel="noopener noreferrer"
       underline="hover"
