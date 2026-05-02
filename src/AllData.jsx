@@ -9,6 +9,7 @@ import Navbar from "./Navbar";
 import Strength from "./Strength";
 import Quotes from "./Quotes";
 import Cards from "./Cards";
+import background from "./assets/background.mp4"
 
 function AllData() {
   const theme = useTheme();
@@ -19,21 +20,34 @@ function AllData() {
       sx={{
         position: "relative",
         minHeight: "100vh",
-        overflowX: "hidden", // Prevent horizontal scrolling
-        background: "linear-gradient(135deg, #c3dafe, #e9d5ff)",
-        width: "100vw", // Use 100vw for full viewport width
-        maxWidth: "100vw", // Ensure it doesn't exceed viewport
+        overflowX: "hidden",
+        width: "100vw",
+        maxWidth: "100vw",
         left: 0,
         right: 0,
-        "&::before": {
-          content: '""',
-          position: "absolute",
-          inset: 0,
-          opacity: 0.9,
-          zIndex: -1,
-        },
       }}
     >
+      {/* Fixed Video Background - Reduced Zoom */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          objectPosition: "center",
+          transform: "scale(1)",
+          zIndex: -1,
+        }}
+      >
+        <source src={background} type="video/mp4" />
+      </video>
+
       {/* Fixed AppBar with responsive settings */}
       <AppBar 
         position="fixed"
@@ -41,23 +55,24 @@ function AllData() {
           top: 0,
           left: 0,
           right: 0,
-          width: "100vw", // Full viewport width
-          background: "linear-gradient(135deg, #667eea, #764ba2)",
+          width: "100vw",
+          background: "linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9))",
+          backdropFilter: "blur(10px)",
           zIndex: 1200,
         }}
       >
         <Toolbar sx={{ 
           display: "flex", 
           justifyContent: "space-between",
-          minHeight: { xs: 56, sm: 64 }, // Responsive toolbar height
-          px: { xs: 2, sm: 3 }, // Responsive padding
+          minHeight: { xs: 56, sm: 64 },
+          px: { xs: 2, sm: 3 },
           width: "100%",
           maxWidth: "100%",
         }}>
           <Typography 
             variant={isMobile ? "subtitle1" : "h6"} 
             component="div"
-            sx={{ fontSize: { xs: "1rem", sm: "1.25rem" } }}
+            sx={{ fontSize: { xs: "1rem", sm: "1.25rem" }, color: "white" }}
           >
             Preetha T
           </Typography>
@@ -69,22 +84,22 @@ function AllData() {
 
       {/* Add padding to account for AppBar height */}
       <Box sx={{ 
-        pt: { xs: "56px", sm: "64px" }, // Matches toolbar height
-        width: "100vw", // Full viewport width
+        pt: { xs: "56px", sm: "64px" },
+        width: "100vw",
         maxWidth: "100vw",
-        overflowX: "hidden", // Prevent horizontal scroll
+        overflowX: "hidden",
         position: "relative",
         left: 0,
         right: 0,
       }}>
         <Container 
-          maxWidth={false} // Remove max width restriction
-          disableGutters // Remove default padding
+          maxWidth={false}
+          disableGutters
           sx={{
-            width: "100vw", // Full width
+            width: "100vw",
             maxWidth: "100%",
-            px: { xs: 0, sm: 0, md: 0 }, // Remove all padding from Container
-            mx: 0, // Remove margin
+            px: { xs: 0, sm: 0, md: 0 },
+            mx: 0,
             overflow: "hidden",
             "& > *": {
               width: "100%",
@@ -95,7 +110,7 @@ function AllData() {
           <Stack spacing={4} sx={{ 
             width: "100%", 
             maxWidth: "100%",
-            px: { xs: 2, sm: 3, md: 4 }, // Add padding directly to Stack instead
+            px: { xs: 2, sm: 3, md: 4 },
           }}>
             <Introduction />
             <Education />

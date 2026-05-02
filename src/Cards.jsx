@@ -13,7 +13,7 @@ function Cards() {
       mt={2}
       sx={{
         position: "relative",
-        backgroundImage: `url(${pattern6})`,
+        // backgroundImage: `url(${pattern6})`,
         backgroundRepeat: "repeat",
         backgroundSize: "cover",
         backgroundPosition: "center",
@@ -22,7 +22,7 @@ function Cards() {
           content: '""',
           position: "absolute",
           inset: 0,
-          background: "linear-gradient(135deg, #c3dafe, #e9d5ff)",
+          // background: "linear-gradient(135deg, #c3dafe, #e9d5ff)",
           opacity: 0.9,
           zIndex: 0,
         },
@@ -73,7 +73,7 @@ function Cards() {
           variant="h6"
           fontWeight={{md:"bold",xs:"bold",sm:"bold"}}
           sx={{
-            background: "linear-gradient(90deg, #667eea, #764ba2)",
+            background: "linear-gradient(90deg, #e4e7f5, #d3b9ed)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
             letterSpacing: 0.8,
@@ -82,6 +82,7 @@ function Cards() {
               sm: "1.3rem", 
               md: "1.8rem" 
             },
+         
             lineHeight: { xs: 1.3, sm: 1.4, md: 1.5 },
             px: { xs: 1, sm: 2, md: 0 },
           }}
@@ -93,7 +94,7 @@ function Cards() {
         <Typography
           variant="body2"
           sx={{
-            color: "text.secondary",
+            color: "white",
             maxWidth: { xs: "95%", sm: "80%", md: 500 },
             fontSize: { 
               xs: "0.85rem", 

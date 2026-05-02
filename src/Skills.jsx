@@ -1,350 +1,209 @@
 import React from "react";
+import { Box, Typography, Grid } from "@mui/material";
+
 import {
-  Card,
-  Box,
-  Typography,
-  Grid,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-} from "@mui/material";
+  FaReact,
+  FaNodeJs,
+  FaGitAlt,
+  FaFigma,
+  FaHtml5,
+  FaCss3Alt,
+} from "react-icons/fa";
 
-import CodeIcon from "@mui/icons-material/Code";
-import AccountTreeIcon from "@mui/icons-material/AccountTree";
-import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
-import ViewQuiltIcon from "@mui/icons-material/ViewQuilt";
-import LayersIcon from "@mui/icons-material/Layers";
-import StyleIcon from "@mui/icons-material/Style";
-import HtmlIcon from "@mui/icons-material/Html";
-import CssIcon from "@mui/icons-material/Css";
+import {
+  SiMongodb,
+  SiExpress,
+  SiJavascript,
+  SiTailwindcss,
+  SiRedux,
+  SiBootstrap,
+  SiMui,
+} from "react-icons/si";
 
-import JavascriptIcon from "@mui/icons-material/Javascript";
-import SourceIcon from "@mui/icons-material/Source";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import DevicesIcon from "@mui/icons-material/Devices";
-import ApiIcon from "@mui/icons-material/Api";
-import LanguageIcon from "@mui/icons-material/Language";
-import DesignServicesIcon from "@mui/icons-material/DesignServices";
-
-import { FaReact } from "react-icons/fa";
-import { SiMongodb, SiNodedotjs, SiExpress } from "react-icons/si";
-
+import { MdDevices, MdApi } from "react-icons/md";
 
 import skill from "./assets/skill.png";
-import pattern2 from "./assets/pattern2.png";
+
+const skillData = [
+  {
+    title: "Frontend",
+    items: [
+      { name: "React.js", icon: <FaReact color="#61DBFB" /> },
+      { name: "Redux", icon: <SiRedux color="#764abc" /> },
+      { name: "Material UI", icon: <SiMui color="#007FFF" /> }, // ✅ added
+      { name: "Tailwind", icon: <SiTailwindcss color="#38bdf8" /> },
+      { name: "Bootstrap", icon: <SiBootstrap color="#7952b3" /> },
+    ],
+  },
+  {
+    title: "Web Basics",
+    items: [
+      { name: "HTML5", icon: <FaHtml5 color="#e34c26" /> }, // ✅ added
+      { name: "CSS3", icon: <FaCss3Alt color="#264de4" /> }, // ✅ added
+      { name: "JavaScript", icon: <SiJavascript color="#f7df1e" /> },
+    ],
+  },
+  {
+    title: "Backend",
+    items: [
+      { name: "Node.js", icon: <FaNodeJs color="#3c873a" /> },
+      { name: "Express.js", icon: <SiExpress /> },
+      { name: "MongoDB", icon: <SiMongodb color="#47A248" /> },
+      { name: "API", icon: <MdApi color="#f59e0b" /> },
+    ],
+  },
+  {
+    title: "Tools",
+    items: [
+      { name: "Git", icon: <FaGitAlt color="#f1502f" /> },
+      { name: "Figma", icon: <FaFigma color="#a259ff" /> },
+    ],
+  },
+  {
+    title: "Concepts",
+    items: [
+      { name: "Responsive", icon: <MdDevices color="#3b82f6" /> },
+      { name: "API Integration", icon: <MdApi color="#10b981" /> },
+    ],
+  },
+];
 
 function Skills() {
   return (
-    <Grid
-      id="skill"
-      container
-      sx={{
-        position: "relative",
-        backgroundImage: `url(${pattern2})`,
-        backgroundRepeat: "repeat",
-        backgroundSize: "cover",
-        overflow: "hidden",
-        p: { xs: 1, sm: 2, md: 3 },
-        "&::before": {
-          content: '""',
-          position: "absolute",
-          inset: 0,
-          background: "linear-gradient(135deg, #e9d5ff, #e9d5ff)",
-          opacity: 0.8,
-          zIndex: 0,
-        },
-      }}
-    >
-      <Box
-        sx={{
-          position: "relative",
-          zIndex: 1,
-          width: "100%",
-          px: { xs: 1, sm: 2 },
-        }}
-      >
-        {/* Title */}
-        <Grid
-          container
-          justifyContent="center"
-          alignItems="center"
-          gap={1}
-          mb={{ xs: 2, sm: 3, md: 4 }}
+    <Box sx={{ px: 2, py: 6 }}   id="skill">
+      {/* Title */}
+      <Box display="flex" justifyContent="center" alignItems="center" mb={5}>
+        <Typography
+          variant="h4"
+          sx={{
+            fontWeight: "bold",
+            letterSpacing: "0.6rem",
+            mb: 1,
+            fontFamily: "'Roboto Mono', monospace",
+            
+            /* Gradient Text Effect */
+            background: "linear-gradient(90deg, #fff, #fafafa, #78768d, #0cfe75)",
+            backgroundSize: "300% 300%",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            
+            /* Animation */
+            animation: "titleGradient 6s ease infinite",
+            
+            /* Glow */
+            filter: "drop-shadow(0 0 8px rgba(190, 77, 255, 0.4))",
+            textAlign: "center"
+          }}
         >
-          <Box
-            component="img"
-            src={skill}
-            sx={{ width: { xs: 24, sm: 26, md: 28 } }}
-            alt="skill"
-          />
-          <Typography
-            variant="h6"
-            fontWeight={{ md: "bold", xs: "bold", sm: "bold" }}
-            sx={{
-              color: "primary.main",
-              fontSize: { xs: "1.1rem", sm: "1.25rem", md: "1.5rem" },
-            }}
-          >
-            SKILLS
-          </Typography>
-        </Grid>
+          SKILLS
+        </Typography>
+      </Box>
 
-        {/* Cards Grid - 2 per row on mobile, 4 per row on desktop */}
-        <Grid
-          container
-          spacing={{ xs: 3, sm: 3, md: 4 }}
-          justifyContent="center"
-        >
-          {/* Frontend */}
+      <Grid container spacing={4} justifyContent="center">
+        {skillData.map((section, index) => (
           <Grid
             item
-            xs={6}
+            xs={12}
             sm={6}
-            md={3}
-            sx={{ display: "flex", justifyContent: "center" }}
+            md={4}
+            key={index}
+            sx={{ display: "flex" }}
           >
-            <Card sx={cardStyle}>
+            <Box
+              sx={{
+                p: 3,
+                borderRadius: "20px",
+                position: "relative",
+                overflow: "hidden",
+                backdropFilter: "blur(12px)",
+                background: "rgba(255,255,255,0.05)",
+                border: "1px solid rgba(255,255,255,0.1)",
+
+                width: "100%",
+                height: "100%",
+                minHeight: { xs: 260, md: 300 },
+
+                display: "flex",
+                flexDirection: "column",
+
+                transition: "0.4s",
+
+                "&:hover": {
+                  transform: "translateY(-10px) scale(1.02)",
+                  boxShadow: "0 20px 40px rgba(0,0,0,0.25)",
+                },
+
+                "&::before": {
+                  content: '""',
+                  position: "absolute",
+                  inset: 0,
+                  borderRadius: "20px",
+                  padding: "1px",
+                  background:
+                    "linear-gradient(135deg, #6366f1, #8b5cf6, #ec4899)",
+                  WebkitMask:
+                    "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                  WebkitMaskComposite: "xor",
+                  maskComposite: "exclude",
+                },
+              }}
+            >
+              {/* Section Title */}
               <Typography
-                variant="subtitle1"
-                fontWeight={{ md: "bold", xs: "bold", sm: "bold" }}
-                textAlign={{ xs: "center", md: "left" }}
-                sx={{ fontSize: { xs: "0.6rem", sm: "0.95rem", md: "1rem" } }}
+                variant="h6"
+                fontWeight="bold"
+                textAlign="center"
+                mb={2}
+                sx={{ color: "white" }}
               >
-                Frontend Technologies
+                {section.title}
               </Typography>
 
-              <List dense disablePadding>
-                <SkillItem
-                  icon={<FaReact color="#61DBFB" size={20} />}
-                  text="React.js"
-                />
-                <SkillItem
-                  icon={<PhoneIphoneIcon color="success" fontSize="small" />}
-                  text="React Native"
-                />
-                <SkillItem
-                  icon={<AccountTreeIcon color="secondary" fontSize="small" />}
-                  text="Redux"
-                />
-              </List>
-
-              <Typography
-                variant="subtitle2"
-                fontWeight={{ md: "bold", xs: "bold", sm: "bold" }}
-                mt={2}
-                textAlign={{ xs: "center", md: "left" }}
+              {/* Skills */}
+              <Box
                 sx={{
-                  fontSize: { xs: "0.6rem", sm: "0.95rem", md: "0.95rem" },
+                  display: "grid",
+                  gridTemplateColumns: "repeat(2, 1fr)",
+                  gap: 2,
+                  flexGrow: 1,
                 }}
               >
-                UI & Styling
-              </Typography>
-              <List dense disablePadding>
-                <SkillItem
-                  icon={<LayersIcon color="warning" fontSize="small" />}
-                  text="Material UI"
-                />
-                <SkillItem
-                  icon={<ViewQuiltIcon color="info" fontSize="small" />}
-                  text="Bootstrap"
-                />
-                <SkillItem
-                  icon={
-                    <StyleIcon sx={{ color: "#38bdf8" }} fontSize="small" />
-                  }
-                  text="Tailwind CSS"
-                />
-              </List>
-            </Card>
-          </Grid>
+                {section.items.map((skill, i) => (
+                  <Box
+                    key={i}
+                    sx={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 1,
+                      p: 1,
+                      borderRadius: "12px",
+                      background: "rgba(255,255,255,0.06)",
+                      transition: "0.3s",
 
-          {/* Web Tech */}
-          <Grid
-            item
-            xs={6}
-            sm={6}
-            md={3}
-            sx={{ display: "flex", justifyContent: "center" }}
-          >
-            <Card sx={cardStyle}>
-              <Typography
-                variant="subtitle1"
-                fontWeight={{ md: "bold", xs: "bold", sm: "bold" }}
-                textAlign={{ xs: "center", md: "left" }}
-                sx={{ fontSize: { xs: "0.7rem", sm: "0.95rem", md: "1rem" } }}
-              >
-                Web Technologies
-              </Typography>
-              <List dense disablePadding>
-                <SkillItem
-                  icon={
-                    <JavascriptIcon
-                      sx={{ color: "#f7df1e" }}
-                      fontSize="small"
-                    />
-                  }
-                  text="JavaScript (ES6+)"
-                />
-                <SkillItem
-                  icon={<HtmlIcon color="error" fontSize="small" />}
-                  text="HTML5"
-                />
-                <SkillItem
-                  icon={<CssIcon color="info" fontSize="small" />}
-                  text="CSS3"
-                />
-                <SkillItem
-                  icon={<SiMongodb size={20} color="#47A248" />}
-                  text="MongoDB"
-                />
-                <SkillItem
-                  icon={<SiNodedotjs size={20} color="#339933" />}
-                  text="Node.js"
-                />
-
-                <SkillItem
-                  icon={<SiExpress size={22} color="#000000" />}
-                  text="Express.js"
-                />
-              </List>
-            </Card>
+                      "&:hover": {
+                        background: "rgba(255,255,255,0.12)",
+                        transform: "scale(1.05)",
+                      },
+                    }}
+                  >
+                    <Box sx={{ fontSize: "1.5rem" }}>{skill.icon}</Box>
+                    <Typography
+                      sx={{
+                        fontSize: "0.85rem",
+                        color: "white",
+                      }}
+                    >
+                      {skill.name}
+                    </Typography>
+                  </Box>
+                ))}
+              </Box>
+            </Box>
           </Grid>
-
-          {/* Tools */}
-          <Grid
-            item
-            xs={6}
-            sm={6}
-            md={3}
-            sx={{ display: "flex", justifyContent: "center" }}
-          >
-            <Card sx={cardStyle}>
-              <Typography
-                variant="subtitle1"
-                fontWeight={{ md: "bold", xs: "bold", sm: "bold" }}
-                textAlign={{ xs: "center", md: "left" }}
-                sx={{ fontSize: { xs: "0.7rem", sm: "0.95rem", md: "1rem" } }}
-              >
-                Tools & Platforms
-              </Typography>
-              <List dense disablePadding>
-                <SkillItem
-                  icon={<SourceIcon color="warning" fontSize="small" />}
-                  text="Git"
-                />
-                <SkillItem
-                  icon={<GitHubIcon fontSize="small" />}
-                  text="GitHub"
-                />
-                <SkillItem
-                  icon={<CodeIcon color="primary" fontSize="small" />}
-                  text="VS Code"
-                />
-                <SkillItem
-                  icon={
-                    <DesignServicesIcon color="secondary" fontSize="small" />
-                  }
-                  text="Figma"
-                />
-              </List>
-            </Card>
-          </Grid>
-
-          {/* Core */}
-          <Grid
-            item
-            xs={6}
-            sm={6}
-            md={3}
-            sx={{ display: "flex", justifyContent: "center" }}
-          >
-            <Card sx={cardStyle}>
-              <Typography
-                variant="subtitle1"
-                fontWeight={{ md: "bold", xs: "bold", sm: "bold" }}
-                textAlign={{ xs: "center", md: "left" }}
-                sx={{ fontSize: { xs: "0.7rem", sm: "0.95rem", md: "1rem" } }}
-              >
-                Core Concepts
-              </Typography>
-              <List
-                dense
-                disablePadding
-                sx={{ fontSize: { xs: "0.8rem", sm: "0.95rem", md: "1rem" } }}
-              >
-                <SkillItem
-                  icon={<DevicesIcon color="primary" fontSize="small" />}
-                  text="Responsive Design"
-                />
-                <SkillItem
-                  icon={<ApiIcon color="secondary" fontSize="small" />}
-                  text="API Integration"
-                />
-                <SkillItem
-                  icon={<LanguageIcon color="success" fontSize="small" />}
-                  text="Cross Browser"
-                />
-                <SkillItem
-                  icon={<AccountTreeIcon color="warning" fontSize="small" />}
-                  text="State Management"
-                />
-              </List>
-            </Card>
-          </Grid>
-        </Grid>
-      </Box>
-    </Grid>
+        ))}
+      </Grid>
+    </Box>
   );
 }
-
-/* Reusable Skill Item */
-const SkillItem = ({ icon, text }) => (
-  <ListItem
-    sx={{
-      justifyContent: { xs: "center", md: "flex-start" },
-      textAlign: { xs: "center", md: "left" },
-      px: { xs: 0, sm: 1 },
-      py: { xs: 0.25, sm: 0.5 },
-    }}
-  >
-    <ListItemIcon
-      sx={{
-        minWidth: { xs: 32, sm: 36 },
-        justifyContent: { xs: "center", md: "flex-start" },
-      }}
-    >
-      {icon}
-    </ListItemIcon>
-    <ListItemText
-      primary={text}
-      primaryTypographyProps={{
-        sx: {
-          fontSize: { xs: "0.5rem", sm: "0.8rem", md: "0.85rem" },
-          fontWeight: { xs: 400, md: 500 },
-        },
-      }}
-    />
-  </ListItem>
-);
-
-/* Card Styles - All cards will have same width */
-const cardStyle = {
-  p: { xs: 2, sm: 1.5, md: 2 },
-  height: { xs: 220, sm: 300, md: 320 },
-  width: { sm: 300, md: "100%" }, // All cards take full width of their grid item
-  maxWidth: { xs: "100%", sm: "100%", md: "100%" }, // Same max width for all
-  transition: "all 0.3s ease-in-out",
-  display: "flex",
-  flexDirection: "column",
-  "&:hover": {
-    transform: {
-      xs: "translateY(-4px)",
-      sm: "translateY(-4px)",
-      md: "scale(1.05)",
-    },
-    boxShadow: { xs: 4, sm: 6, md: 10 },
-  },
-};
 
 export default Skills;

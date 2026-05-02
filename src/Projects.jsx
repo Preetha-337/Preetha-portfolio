@@ -1,13 +1,15 @@
 import React from "react";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
+import BusinessIcon from "@mui/icons-material/Business";
+import RBD from "./assets/RBD.png";
 import fashion1 from "./assets/fashion1.png";
 import fashion2 from "./assets/fashion2.png";
 import reda1 from "./assets/reda1.png";
 import reda2 from "./assets/reda2.png";
 import Reda from "./assets/Reda.png";
 import { Paper } from "@mui/material";
-
+import WorkIcon from "@mui/icons-material/Work";
 import apartment from "./assets/apartment.png";
 import agreement from "./assets/agreement.png";
 import ams from "./assets/ams.png";
@@ -39,967 +41,641 @@ import pie from "./assets/pie.png";
 import intern from "./assets/intern.png";
 function Projects() {
   return (
-    <Grid
-      id="Project"
-      container
-      sx={{
-        position: "relative",
-        backgroundImage: `url(${pattern1})`,
+  <Grid
+  id="Project"
+  container
+  sx={{
+    position: "relative",
+    "&::before": {
+      content: '""',
+      position: "absolute",
+      inset: 0,
+      opacity: 0.9,
+      zIndex: 0,
+    },
+  }}
+>
+  <Box sx={{ position: "relative", zIndex: 1, width: "100%" }}>
+    <Box p={1} sx={{ overflow: "hidden" }}>
 
-        "&::before": {
-          content: '""',
-          position: "absolute",
-          inset: 0,
-          background: "linear-gradient(135deg, #c3dafe, #e9d5ff)",
-          opacity: 0.9,
-          zIndex: 0,
+      {/* ─── TITLE ─────────────────────────────────────────────────── */}
+      <Grid
+        container
+        direction="row"
+        gap={1}
+        alignItems="center"
+        justifyContent="center"
+      >
+        <Box display="flex" alignItems="center" gap={1}>
+          <Typography
+            variant="h4"
+            sx={{
+              fontWeight: "bold",
+              letterSpacing: "0.6rem",
+              mb: 1,
+              fontFamily: "'Roboto Mono', monospace",
+              background: "linear-gradient(90deg, #fff, #fafafa, #78768d, #0cfe75)",
+              backgroundSize: "300% 300%",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              animation: "titleGradient 6s ease infinite",
+              filter: "drop-shadow(0 0 8px rgba(190, 77, 255, 0.4))",
+              textAlign: "center",
+            }}
+          >
+            PROJECTS
+          </Typography>
+        </Box>
+      </Grid>
+
+      {/* ─── PROJECT 1 : Aviar Platform ─────────────────────────────── */}
+  
+        {/* Card */}
+       
+           <Grid
+        container
+        spacing={1}
+        mt={4}
+        // p={{ xs: 1, sm: 2 }}
+       ml={3}
+        // alignItems="flex-start"
+      >
+        {/* Card */}
+        <Grid item xs={12} sm={10} md={5} lg={4}>
+          <Card
+            elevation={4}
+            sx={{
+              p: { xs: 1.5, sm: 2, md: 3 },
+              width:{md: "85%"},
+              background: "linear-gradient(135deg,rgb(122, 106, 171),rgb(76, 22, 184))",
+              transition: "all 0.3s ease-in-out",
+              "&:hover": {
+                transform: { xs: "translateY(-4px)", md: "scale(1.05)" },
+                boxShadow: { xs: 6, md: 10 },
+              },
+            }}
+          >
+            <Typography
+              variant="subtitle1"
+              fontWeight="bold"
+              sx={{
+                fontSize: { xs: "0.9rem", sm: "1rem", md: "1rem" },
+                mb: 1,
+                textAlign: "center",
+                color: "white",
+              }}
+            >
+              Aviar Platform (React | Bootstrap | Material UI)
+            </Typography>
+            <List dense>
+            {[
+  "Built custom UI components and forms for engineering data input",
+  "Integrated RESTful APIs to dynamically load course data",
+  "Wrote modular and reusable React.js components",
+  "Developed Teacher module with course creation, schedule management, and student performance tracking",
+  "Built Student module with enrollment flows, progress dashboards, and assignment submission UI",
+  "Implemented Admin module with user management, role-based access control, and analytics overview",
+].map((text, i) => (
+                <ListItem key={i} disablePadding sx={{ py: 0.5 }}>
+                  <ListItemIcon sx={{ minWidth: { xs: 32, sm: 36 }, color: "white" }}>
+                    <StarBorderIcon fontSize="small" />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary={text}
+                    primaryTypographyProps={{
+                      sx: {
+                        fontSize: { xs: "0.8rem", sm: "0.9rem", md: "0.85rem" },
+                        color: "white",
+                      },
+                    }}
+                  />
+                </ListItem>
+              ))}
+            </List>
+          </Card>
+        </Grid>
+
+        {/* Image */}
+        <Grid
+          item
+          xs={12}
+          sm={10}
+          md={6}
+          lg={5}
+          sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
+        >
+          <Paper
+            elevation={5}
+            sx={{
+              width: "100%",
+              maxWidth: { xs: "100%", sm: 500, md: 500 },
+              height: { xs: 200, sm: 220, md: 230 },
+              borderRadius: 2,
+              overflow: "hidden",
+              transition: "0.3s",
+              flexShrink: 0,
+              "&:hover": {
+                boxShadow: { xs: 8, md: 12 },
+                transform: { md: "translateY(-6px)" },
+              },
+            }}
+          >
+            <Box
+              component="img"
+              src={Aviar}
+              sx={{ width: "100%", height: "100%", objectFit: "cover" }}
+            />
+          </Paper>
+        </Grid>
+      </Grid>
+
+      {/* ─── PROJECT 2 : RAMS360 ────────────────────────────────────── */}
+   <Grid
+  container
+  direction="row"
+  spacing={4}
+  p={{ xs: 1, sm: 2, md: 3 }}
+  mt={2}
+  justifyContent="center"
+  alignItems="flex-start"
+  columnSpacing={{ xs: 2, sm: 4, md: 10 }}
+>
+  {/* Images column */}
+  <Grid item xs={12} sm={10} md={6} order={{ xs: 2, md: 1 }}>
+    <Grid container direction="column" alignItems="center" spacing={3}>
+      <Grid item sx={{ width: "100%", display: "flex", justifyContent: "center" }}>
+        <Paper
+          elevation={5}
+          sx={{
+            width: { xs: "80%", sm: 300, md: 250 },
+            height: { xs: 180, sm: 200, md: 230 },
+            borderRadius: 2,
+            overflow: "hidden",
+            transition: "all 0.4s ease",
+            "&:hover": { boxShadow: 12, transform: "translateY(-6px)" },
+          }}
+        >
+          <Box
+            component="img"
+            src={electronics}
+            sx={{ width: "100%", height: "100%", objectFit: "cover" }}
+          />
+        </Paper>
+      </Grid>
+
+      <Grid item container justifyContent="center" spacing={4}>
+        <Grid item xs={6} sm={5} md={5}>
+          <Paper
+            elevation={5}
+            sx={{
+              width: {md:300,xs:200,sm:300},
+              height: { xs: 160, sm: 200, md: 230 },
+              borderRadius: 2,
+              overflow: "hidden",
+              transition: "all 0.4s ease",
+              "&:hover": { boxShadow: 12, transform: "translateY(-6px)" },
+            }}
+          >
+            <Box
+              component="img"
+              src={RBD}
+              sx={{ width:"100%", height: "43%", mt: 10 }}
+            />
+          </Paper>
+        </Grid>
+
+        <Grid item xs={6} sm={5} md={5}>
+          <Paper
+            elevation={5}
+            sx={{
+                   width: {md:300,xs:200,sm:300},
+              height: { xs: 160, sm: 200, md: 230 },
+              borderRadius: 2,
+              overflow: "hidden",
+              transition: "all 0.4s ease",
+              "&:hover": { boxShadow: 12, transform: "translateY(-6px)" },
+            }}
+          >
+            <Box
+              component="img"
+              src={RAMS360}
+              sx={{ width: "90%", height: "190%", ml:{ md:1.5,sm:0,xs:0} }}
+            />
+          </Paper>
+        </Grid>
+      </Grid>
+    </Grid>
+  </Grid>
+
+  {/* Card */}
+  <Grid
+    item
+    xs={12}
+    sm={10}
+    md={6}
+    order={{ xs: 1, md: 2 }}
+    sx={{ display: "flex", justifyContent: "center" }}
+  >
+    <Card
+      elevation={4}
+      sx={{
+        p: { xs: 1.5, sm: 2, md: 1 },
+        width: "100%",
+        maxWidth: { xs: "100%", sm: 600, md: 550 },
+        ml: { md: "auto",xs:"auto",sm:"auto" },
+        background: "linear-gradient(135deg,rgb(88, 47, 236),rgb(43, 190, 243))",
+        transition: "all 0.3s ease-in-out",
+        "&:hover": {
+          transform: { xs: "translateY(-4px)", md: "scale(1.05)" },
+          boxShadow: { xs: 6, md: 10 },
         },
       }}
     >
-      <Box sx={{ position: "relative", zIndex: 1, width: "100%" }}>
-        <Box
-          p={1}
-          sx={{
-            // border: "2px solid black",
+      <Typography
+        variant="subtitle1"
+        fontWeight="bold"
+        sx={{
+          fontSize: { xs: "0.9rem", sm: "0.95rem", md: "1rem" },
+          mb: { xs: 0.5, sm: 1 },
+          textAlign: "center",
+          color: "white",
+        }}
+      >
+        Rams360 (React | Material UI)
+      </Typography>
+      <List dense>
+        {[
+          "Built custom UI components and forms for engineering data input and complex calculations.",
+          "Integrated APIs for real-time failure rate computations and analytics.",
+          "Implemented robust form validation and optimized error-handling mechanisms.",
+          "Enhanced UI/UX by improving component reusability and responsiveness across multiple devices.",
+          "Developed backend CRUD operations for managing application data efficiently.",
+          "Designed and maintained RESTful APIs for seamless frontend-backend communication.",
+          "Collaborated on full-stack development, ensuring smooth integration between frontend and backend.",
+          "Debugged and resolved backend issues, improving system reliability and performance.",
+        ].map((text, i) => (
+          <ListItem key={i} disablePadding sx={{ py: 0.5 }}>
+            <ListItemIcon sx={{ minWidth: { xs: 32, md: 36 } }}>
+              <StarBorderIcon fontSize="small" sx={{ color: "white" }} />
+            </ListItemIcon>
+            <ListItemText
+              primary={text}
+              primaryTypographyProps={{
+                sx: {
+                  fontSize: { xs: "0.8rem", sm: "0.85rem", md: "0.9rem" },
+                  color: "white",
+                  lineHeight: { xs: 1.3, sm: 1.4, md: 1.5 },
+                },
+              }}
+            />
+          </ListItem>
+        ))}
+      </List>
+    </Card>
+  </Grid>
+</Grid>
 
+
+      {/* ─── PROJECT 3 : Reda Boutique ──────────────────────────────── */}
+<Grid
+  container
+  spacing={4}
+  mt={4}
+  p={{ xs: 1, sm: 2 }}
+  justifyContent="center"
+  alignItems="center"
+>
+  {/* Card */}
+  <Grid item xs={12} sm={10} md={5} lg={4}>
+    <Card
+      elevation={4}
+      sx={{
+        p: { xs: 1.5, sm: 2, md: 3 },
+        width: "100%",
+        background: "linear-gradient(135deg,rgb(131, 130, 134),rgb(20, 95, 61))",
+        transition: "all 0.3s ease-in-out",
+        "&:hover": {
+          transform: { xs: "translateY(-4px)", md: "scale(1.05)" },
+          boxShadow: { xs: 6, md: 10 },
+        },
+      }}
+    >
+      <Typography
+        variant="subtitle1"
+        fontWeight="bold"
+        sx={{
+          fontSize: { xs: "0.9rem", sm: "0.95rem", md: "1rem" },
+          mb: { xs: 0.5, sm: 1 },
+          textAlign: "center",
+          color: "white",
+        }}
+      >
+        Reda Boutique Fashion (React.js | Tailwind CSS)
+      </Typography>
+      <List dense>
+        {[
+          "Designed and developed a responsive website showcasing products and brand identity.",
+          "Utilized HTML5, CSS3, Bootstrap for clean and user-friendly interface.",
+          "Implemented mobile-first responsive design for cross-device compatibility.",
+          "Structured key sections (Home, About, Products, Contact) for better navigation.",
+        ].map((text, i) => (
+          <ListItem key={i} disablePadding sx={{ py: 0.5 }}>
+            <ListItemIcon sx={{ minWidth: { xs: 32, md: 36 } }}>
+              <StarBorderIcon fontSize="small" sx={{ color: "white" }} />
+            </ListItemIcon>
+            <ListItemText
+              primary={text}
+              primaryTypographyProps={{
+                sx: {
+                  fontSize: { xs: "0.8rem", sm: "0.85rem", md: "0.9rem" },
+                  color: "white",
+                  lineHeight: { xs: 1.3, sm: 1.4, md: 1.5 },
+                },
+              }}
+            />
+          </ListItem>
+        ))}
+        <ListItem disablePadding sx={{ mt: 1 }}>
+          <Link
+            href="https://theredastudio.com/"
+            target="_blank"
+            underline="hover"
+            sx={{
+              fontSize: { xs: "0.8rem", sm: "0.85rem", md: "1rem" },
+              color: "#e0f2fe",
+              wordBreak: "break-all",
+            }}
+          >
+            https://theredastudio.com/
+          </Link>
+        </ListItem>
+      </List>
+    </Card>
+  </Grid>
+
+  {/* Images */}
+  <Grid item xs={12} sm={10} md={6} lg={5}>
+    <Grid container spacing={2} justifyContent="center">
+      {[reda2, reda1].map((src, i) => (
+        <Grid item key={i} xs={6} sm={6} md={6}>
+          <Paper
+            elevation={5}
+            sx={{
+              width: {xs:"110%",md:"100%"},
+              height: { xs: 180, sm: 230, md: 280 },
+              borderRadius: 2,
+              overflow: "hidden",
+              transition: "all 0.4s ease",
+              "&:hover": { boxShadow: 12, transform: "translateY(-6px)" },
+            }}
+          >
+            <Box
+              component="img"
+              src={src}
+              sx={{ width: "100%", height: "100%", objectFit: "cover" }}
+            />
+          </Paper>
+        </Grid>
+      ))}
+    </Grid>
+  </Grid>
+</Grid>
+
+      {/* ─── PROJECT 4 : Apartment Management System ────────────────── */}
+<Grid
+  container
+  direction="row"
+  spacing={4}
+  mt={4}
+  p={{ xs: 1, sm: 2, md: 3 }}
+  justifyContent="center"
+  alignItems="center"
+>
+  {/* Images — left side */}
+  <Grid item xs={12} sm={10} md={6} order={{ xs: 2, md: 1 }}>
+    <Grid container direction="column" spacing={2} alignItems="center">
+
+      {/* Top wide image */}
+      <Grid item sx={{ width: "100%", display: "flex", justifyContent: "center" }}>
+        <Paper
+          elevation={5}
+          sx={{
+            width: "100%",
+            maxWidth: { xs: "100%", sm: 500, md: 500 },
+            borderRadius: 2,
             overflow: "hidden",
+            transition: "all 0.3s ease-in-out",
+            "&:hover": { transform: "scale(1.03)", boxShadow: 10 },
           }}
         >
-          {/* <Box sx={{ transform: "translateY(-500px)" }}> */}
-          <Grid
-            container
-            direction={{ xs: "row", md: "row", sm: "row" }}
-            gap={1}
-            alignItems="center"
-            justifyContent="center"
-          >
-            <Box component="img" src={Project} sx={{ width: 30 }} />
-            <Typography
-              variant="h6"
-              fontWeight="bold"
-              sx={{ color: "primary.main" }}
+          <Box
+            component="img"
+            src={agreement}
+            sx={{
+              width: "100%",
+              height: { xs: 140, sm: 160, md: 180 },
+              objectFit: "cover",
+            }}
+          />
+        </Paper>
+      </Grid>
+
+      {/* Bottom two images side by side */}
+      <Grid item container spacing={2} justifyContent="center">
+        {[apartment, ams].map((src, i) => (
+          <Grid item key={i} xs={6} sm={6} md={6}>
+            <Paper
+              elevation={5}
+              sx={{
+                width:{md: "100%",xs:"120%"},
+                borderRadius: 2,
+                overflow: "hidden",
+                transition: "all 0.3s ease-in-out",
+                "&:hover": { transform: "scale(1.03)", boxShadow: 10 },
+              }}
             >
-              PROJECTS
-            </Typography>
-          </Grid>
-          <Grid
-            container
-            spacing={4}
-            mt={2}
-            p={2}
-            // alignItems="center"
-            justifyContent="space-between"
-            // border="1px solid black"
-            overflow="hidden"
-          >
-            <Grid
-              item
-              xs={12}
-              md={6}
-              container
-              direction={{ xs: "column", md: "row", sm: "row" }}
-              spacing={{ xs: 2, md: 3 }}
-              alignItems="stretch"
-              justifyContent="flex-start"
-            >
-              {/* Card Section - Takes 5 columns on desktop */}
-              <Grid
-                item
-                xs={12}
-                md={5}
+              <Box
+                component="img"
+                src={src}
                 sx={{
-                  display: "flex",
-                  ml: { sm: 4, md: 0 },
-                  width: { sm: 700, md: "40%" },
+                  width: "100%",
+                  height: { xs: 150, sm: 200, md: 250 },
+                  objectFit: "cover",
                 }}
-              >
-                <Card
-                  elevation={4}
-                  sx={{
-                    p: { xs: 1.5, sm: 2, md: 3 },
-                    width: { xs: "100%", sm: "100%", md: 420 },
-                    maxWidth: { xs: "100%", md: 420, sm: 600 },
-                    mx: { xs: "auto", md: "auto" },
-                    mt: { xs: 2, md: 0 },
-                    ml: { xs: 0, sm: 0 },
-                    // alignSelf: "center",
-                    transition: "all 0.3s ease-in-out",
-                    "&:hover": {
-                      transform: { xs: "translateY(-4px)", md: "scale(1.05)" },
-                      boxShadow: { xs: 6, md: 10 },
-                    },
-                  }}
-                >
-                  <Typography
-                    variant="subtitle1"
-                    fontWeight="bold"
-                    sx={{
-                      fontSize: {
-                        xs: "0.9rem",
-                        sm: "1rem", // Slightly larger on tablet
-                        md: "1rem",
-                      },
-                      mb: 1,
-                      textAlign: { xs: "center", sm: "center", md: "center" },
-                    }}
-                  >
-                    Aviar Platform (React | Bootstrap | Material UI)
-                  </Typography>
-                  <Box sx={{ flexGrow: 1 }}>
-                    <List dense>
-                      <ListItem disablePadding sx={{ py: 0.5 }}>
-                        <ListItemIcon
-                          sx={{
-                            minWidth: { xs: 32, sm: 36 },
-                            justifyContent: {
-                              xs: "center",
-                              sm: "center",
-                              md: "flex-start",
-                            },
-                          }}
-                        >
-                          <StarBorderIcon fontSize="small" />
-                        </ListItemIcon>
-                        <ListItemText
-                          primary="Built custom UI components and forms for engineering data input"
-                          primaryTypographyProps={{
-                            sx: {
-                              fontSize: {
-                                xs: "0.8rem",
-                                sm: "0.9rem",
-                                md: "0.85rem",
-                              },
-                              // textAlign: { xs: "center", sm: "center", md: "left" }
-                            },
-                          }}
-                        />
-                      </ListItem>
-                      <ListItem disablePadding sx={{ py: 0.5 }}>
-                        <ListItemIcon
-                          sx={{
-                            minWidth: { xs: 32, sm: 36 },
-                            justifyContent: {
-                              xs: "center",
-                              sm: "center",
-                              md: "flex-start",
-                            },
-                          }}
-                        >
-                          <StarBorderIcon fontSize="small" />
-                        </ListItemIcon>
-                        <ListItemText
-                          primary="Integrated RESTful APIs to dynamically load course data"
-                          primaryTypographyProps={{
-                            sx: {
-                              fontSize: {
-                                xs: "0.8rem",
-                                sm: "0.9rem",
-                                md: "0.85rem",
-                              },
-                              // textAlign: { xs: "center", sm: "center", md: "left" }
-                            },
-                          }}
-                        />
-                      </ListItem>
-                      <ListItem disablePadding sx={{ py: 0.5 }}>
-                        <ListItemIcon
-                          sx={{
-                            minWidth: { xs: 32, sm: 36 },
-                            justifyContent: {
-                              xs: "center",
-                              sm: "center",
-                              md: "flex-start",
-                            },
-                          }}
-                        >
-                          <StarBorderIcon fontSize="small" />
-                        </ListItemIcon>
-                        <ListItemText
-                          primary="Wrote modular and reusable React.js components"
-                          primaryTypographyProps={{
-                            sx: {
-                              fontSize: {
-                                xs: "0.8rem",
-                                sm: "0.9rem",
-                                md: "0.85rem",
-                              },
-                              // textAlign: { xs: "center", sm: "center", md: "left" }
-                            },
-                          }}
-                        />
-                      </ListItem>
-                    </List>
-                  </Box>
-                </Card>
-              </Grid>
-
-              {/* Images Section - Takes 7 columns on desktop, appears to the right of card */}
-              <Grid
-                item
-                xs={12}
-                md={7}
-                sx={{ display: "flex", alignItems: "center" }}
-              >
-                <Grid
-                  container
-                  direction="row"
-                  wrap="nowrap"
-                  spacing={{ xs: 1.5, sm: 2, md: 4 }}
-                  sx={{
-                    overflowX: "auto",
-                    flexWrap: "nowrap",
-                    pb: 1,
-                    height: "100%",
-                    alignItems: "center",
-                    // Hide scrollbar for cleaner look
-                    "&::-webkit-scrollbar": {
-                      height: 4,
-                    },
-                    "&::-webkit-scrollbar-track": {
-                      background: "#f1f1f1",
-                      borderRadius: 2,
-                    },
-                    "&::-webkit-scrollbar-thumb": {
-                      background: "#888",
-                      borderRadius: 2,
-                    },
-                    // For Firefox
-                    scrollbarWidth: "thin",
-                    scrollbarColor: "#888 #f1f1f1",
-                  }}
-                >
-                  {/* Image 1 */}
-                  <Grid item sx={{ display: "flex", alignItems: "center" }}>
-                    <Paper
-                      elevation={5}
-                      sx={{
-                        width: { xs: 130, sm: 300, md: 270 },
-                        height: { xs: 180, sm: 200, md: 230 },
-                        borderRadius: 2,
-                        overflow: "hidden",
-                        //  cursor: { xs: "zoom-in" },
-                        transition: "0.3s",
-                        position: "relative",
-                        flexShrink: 0,
-                        "&:hover": {
-                          boxShadow: { xs: 8, md: 12 },
-                          transform: { md: "translateY(-6px)" },
-                        },
-                        // Mobile zoom effect
-                        "@media (max-width: 900px)": {
-                          "&:active": {
-                            zIndex: 9999,
-                            position: "fixed",
-                            top: "50%",
-                            left: "50%",
-                            transform: "translate(-50%, -50%) scale(1.8)",
-                            width: "90vw !important",
-                            height: "auto !important",
-                            maxHeight: "80vh",
-                            transition: "transform 0.3s ease",
-                            boxShadow: 24,
-                          },
-                        },
-                      }}
-                    >
-                      <Box
-                        component="img"
-                        src={intern}
-                        sx={{
-                          width: { xs: 130, md: 270, sm: 380 },
-                          height: "100%",
-                          objectFit: "cover",
-                        }}
-                      />
-                    </Paper>
-                  </Grid>
-
-                  <Grid item sx={{ display: "flex", alignItems: "center" }}>
-                    <Paper
-                      elevation={5}
-                      sx={{
-                        width: { xs: 130, sm: 300, md: 300 },
-                        height: { xs: 180, sm: 200, md: 230 },
-                        borderRadius: 2,
-                        overflow: "hidden",
-                        // cursor: { xs: "zoom-in" },
-                        transition: "0.3s",
-                        position: "relative",
-                        flexShrink: 0,
-                        "&:hover": {
-                          boxShadow: { xs: 8, md: 12 },
-                          transform: { md: "translateY(-6px)" },
-                        },
-
-                        "@media (max-width: 900px)": {
-                          "&:active": {
-                            zIndex: 9999,
-                            position: "fixed",
-                            top: "50%",
-                            left: "50%",
-                            transform: "translate(-50%, -50%) scale(1.8)",
-                            width: "90vw !important",
-                            height: "auto !important",
-                            maxHeight: "80vh",
-                            transition: "transform 0.3s ease",
-                            boxShadow: 24,
-                          },
-                        },
-                      }}
-                    >
-                      <Box
-                        component="img"
-                        src={Aviar}
-                        sx={{
-                          width: { xs: 130, md: 300, sm: 300 },
-                          height: "100%",
-                          objectFit: "cover",
-                        }}
-                      />
-                    </Paper>
-                  </Grid>
-                </Grid>
-              </Grid>
-            </Grid>
+              />
+            </Paper>
           </Grid>
-          <Grid
-            container
-            direction="row"
-            spacing={2}
-            p={2}
-            mt={5}
-            gap={4}
-            justifyContent="space-between"
-          >
-            <Grid item xs={12} md={7} order={{ xs: 2, md: 1 }}>
-              <Grid
-                container
-                direction="column"
-                alignItems="flex-start"
-                spacing={4}
-              >
-                <Grid item alignItems={{ md: "center" }} ml={{ md: 15, xs: 0 }}>
-                  <Paper
-                    elevation={5}
-                    sx={{
-                      width: { xs: 200, md: 250, sm: 400 },
-                      height: { xs: 200, md: 230 },
-                      borderRadius: 2,
-                      ml: { xs: 6, md: 4, sm: 15 },
+        ))}
+      </Grid>
 
-                      overflow: "hidden",
-                      // cursor: "pointer",
-                      transition: "all 0.4s ease",
-                      "&:hover": {
-                        boxShadow: 12,
-                        transform: "translateY(-6px)",
-                      },
-                    }}
-                  >
-                    <Box
-                      component="img"
-                      src={electronics}
-                      sx={{
-                        width: { xs: 200, md: 250, sm: 350 },
-                        ml: { sm: 5, md: 0 },
-                        height: { xs: 200, md: 230 },
-                        borderRadius: 2,
-                      }}
-                    />
-                  </Paper>
-                </Grid>
-
-                <Grid item container justifyContent="center" spacing={2}>
-                  <Grid item>
-                    <Paper
-                      elevation={5}
-                      sx={{
-                        width: { xs: 110, md: 250, sm: 300 },
-                        height: { xs: 200, md: 230 },
-                        borderRadius: 2,
-                        ml: { xs: 1, md: 2 },
-                        overflow: "hidden",
-                        // cursor: "pointer",
-                        transition: "all 0.4s ease",
-                        "&:hover": {
-                          boxShadow: 12,
-                          transform: "translateY(-6px)",
-                        },
-                      }}
-                    >
-                      <Box
-                        component="img"
-                        src={pie}
-                        sx={{
-                          width: { xs: 130, md: 250, sm: 300 },
-                          height: { xs: 200, md: 230 },
-                          borderRadius: 2,
-                        }}
-                      />
-                    </Paper>
-                  </Grid>
-
-                  <Grid item>
-                    <Paper
-                      elevation={5}
-                      sx={{
-                        width: { xs: 110, md: 250, sm: 300 },
-                        height: { xs: 200, md: 230 },
-                        borderRadius: 2,
-                        overflow: "hidden",
-                        // cursor: "pointer",
-                        transition: "all 0.4s ease",
-                        "&:hover": {
-                          boxShadow: 12,
-                          transform: "translateY(-6px)",
-                        },
-                      }}
-                    >
-                      <Box
-                        component="img"
-                        src={RAMS360}
-                        sx={{
-                          width: { xs: 130, md: 250, sm: 300 },
-                          height: { xs: 200, md: 230 },
-                          borderRadius: 2,
-                          objectFit: "cover",
-                        }}
-                      />
-                    </Paper>
-                  </Grid>
-                </Grid>
-              </Grid>
-            </Grid>
-
-            <Grid
-              item
-              xs={12}
-              md={5}
-              sx={{ mr: { md: 20 } }}
-              order={{ xs: 1, md: 2 }}
-            >
-              <Card
-                elevation={4}
-                sx={{
-                  p: { xs: 1.5, sm: 2, md: 3 },
-                  width: { xs: "100%", sm: "90%", md: 420 },
-                  maxWidth: { xs: "100%", md: 420 },
-                  mx: { xs: "auto", md: "auto" },
-                  mt: { xs: 2, md: 0 },
-                  alignSelf: "center",
-                  transition: "all 0.3s ease-in-out",
-                  "&:hover": {
-                    transform: { xs: "translateY(-4px)", md: "scale(1.05)" },
-                    boxShadow: { xs: 6, md: 10 },
-                  },
-                }}
-              >
-                <Typography
-                  variant="subtitle1"
-                  fontWeight="bold"
-                  sx={{
-                    fontSize: { xs: "0.9rem", sm: "0.95rem", md: "1rem" },
-                    mb: { xs: 0.5, sm: 1 },
-                    textAlign: { xs: "center", sm: "center", md: "center" },
-                  }}
-                >
-                  Rams360 (React | Material UI)
-                </Typography>
-
-                <List dense>
-                  <ListItem disablePadding sx={{ py: 0.5 }}>
-                    <ListItemIcon sx={{ minWidth: { xs: 32, md: 36 } }}>
-                      <StarBorderIcon fontSize="small" />
-                    </ListItemIcon>
-                    <ListItemText
-                      primary="Built custom UI components and forms for engineering data input and complex calculations."
-                      primaryTypographyProps={{
-                        sx: {
-                          fontSize: {
-                            xs: "0.8rem",
-                            sm: "0.85rem",
-                            md: "0.9rem",
-                          },
-                          lineHeight: { xs: 1.3, sm: 1.4, md: 1.5 },
-                        },
-                      }}
-                    />
-                  </ListItem>
-
-                  <ListItem disablePadding sx={{ py: 0.5 }}>
-                    <ListItemIcon sx={{ minWidth: { xs: 32, md: 36 } }}>
-                      <StarBorderIcon fontSize="small" />
-                    </ListItemIcon>
-                    <ListItemText
-                      primary="Integrated APIs for real-time failure rate computations and analytics."
-                      primaryTypographyProps={{
-                        sx: {
-                          fontSize: {
-                            xs: "0.8rem",
-                            sm: "0.85rem",
-                            md: "0.9rem",
-                          },
-                          lineHeight: { xs: 1.3, sm: 1.4, md: 1.5 },
-                        },
-                      }}
-                    />
-                  </ListItem>
-
-                  <ListItem disablePadding sx={{ py: 0.5 }}>
-                    <ListItemIcon sx={{ minWidth: { xs: 32, md: 36 } }}>
-                      <StarBorderIcon fontSize="small" />
-                    </ListItemIcon>
-                    <ListItemText
-                      primary="Implemented robust form validation and optimized error-handling mechanisms."
-                      primaryTypographyProps={{
-                        sx: {
-                          fontSize: {
-                            xs: "0.8rem",
-                            sm: "0.85rem",
-                            md: "0.9rem",
-                          },
-                          lineHeight: { xs: 1.3, sm: 1.4, md: 1.5 },
-                        },
-                      }}
-                    />
-                  </ListItem>
-
-                  <ListItem disablePadding sx={{ py: 0.5 }}>
-                    <ListItemIcon sx={{ minWidth: { xs: 32, md: 36 } }}>
-                      <StarBorderIcon fontSize="small" />
-                    </ListItemIcon>
-                    <ListItemText
-                      primary="Enhanced UI/UX by improving component reusability and responsiveness across multiple devices."
-                      primaryTypographyProps={{
-                        sx: {
-                          fontSize: {
-                            xs: "0.8rem",
-                            sm: "0.85rem",
-                            md: "0.9rem",
-                          },
-                          lineHeight: { xs: 1.3, sm: 1.4, md: 1.5 },
-                        },
-                      }}
-                    />
-                  </ListItem>
-                </List>
-              </Card>
-            </Grid>
-          </Grid>
-
-          <Grid
-            container
-            spacing={7}
-            mt={2}
-            p={2}
-            // alignItems="center"
-            justifyContent="space-between"
-            // border="1px solid black"
-            overflow="hidden"
-          >
-            <Grid
-              item
-              xs={12}
-              md={6}
-              spacing={7}
-              p={1}
-              gap={4}
-              container
-              direction="row"
-            >
-              <Card
-                elevation={4}
-                sx={{
-                  p: { xs: 1.5, sm: 2, md: 3 },
-                  width: { xs: "100%", sm: "90%", md: 420 },
-                  maxWidth: { xs: "100%", md: 420 },
-                  mx: { xs: "auto", md: "auto" },
-                  mt: { xs: 2, md: 0 },
-                  alignSelf: "center",
-                  transition: "all 0.3s ease-in-out",
-                  "&:hover": {
-                    transform: { xs: "translateY(-4px)", md: "scale(1.05)" },
-                    boxShadow: { xs: 6, md: 10 },
-                  },
-                }}
-              >
-                <Typography
-                  variant="subtitle1"
-                  fontWeight="bold"
-                  sx={{
-                    fontSize: { xs: "0.9rem", sm: "0.95rem", md: "1rem" },
-                    mb: { xs: 0.5, sm: 1 },
-                    textAlign: { xs: "center", sm: "center", md: "center" },
-                  }}
-                >
-                  Reda Boutique Fashion (React.js | Tailwind CSS)
-                </Typography>
-
-                <List dense>
-                  <ListItem disablePadding sx={{ py: 0.5 }}>
-                    <ListItemIcon sx={{ minWidth: { xs: 32, md: 36 } }}>
-                      <StarBorderIcon fontSize="small" />
-                    </ListItemIcon>
-                    <ListItemText
-                      primary="Designed and developed a responsive website showcasing products and brand identity."
-                      primaryTypographyProps={{
-                        sx: {
-                          fontSize: {
-                            xs: "0.8rem",
-                            sm: "0.85rem",
-                            md: "0.9rem",
-                          },
-                          lineHeight: { xs: 1.3, sm: 1.4, md: 1.5 },
-                        },
-                      }}
-                    />
-                  </ListItem>
-
-                  <ListItem disablePadding sx={{ py: 0.5 }}>
-                    <ListItemIcon sx={{ minWidth: { xs: 32, md: 36 } }}>
-                      <StarBorderIcon fontSize="small" />
-                    </ListItemIcon>
-                    <ListItemText
-                      primary="Utilized HTML5, CSS3, Bootstrap for clean and user-friendly interface."
-                      primaryTypographyProps={{
-                        sx: {
-                          fontSize: {
-                            xs: "0.8rem",
-                            sm: "0.85rem",
-                            md: "0.9rem",
-                          },
-                          lineHeight: { xs: 1.3, sm: 1.4, md: 1.5 },
-                        },
-                      }}
-                    />
-                  </ListItem>
-
-                  <ListItem disablePadding sx={{ py: 0.5 }}>
-                    <ListItemIcon sx={{ minWidth: { xs: 32, md: 36 } }}>
-                      <StarBorderIcon fontSize="small" />
-                    </ListItemIcon>
-                    <ListItemText
-                      primary="Implemented mobile-first responsive design for cross-device compatibility."
-                      primaryTypographyProps={{
-                        sx: {
-                          fontSize: {
-                            xs: "0.8rem",
-                            sm: "0.85rem",
-                            md: "0.9rem",
-                          },
-                          lineHeight: { xs: 1.3, sm: 1.4, md: 1.5 },
-                        },
-                      }}
-                    />
-                  </ListItem>
-
-                  <ListItem disablePadding sx={{ py: 0.5 }}>
-                    <ListItemIcon sx={{ minWidth: { xs: 32, md: 36 } }}>
-                      <StarBorderIcon fontSize="small" />
-                    </ListItemIcon>
-                    <ListItemText
-                      primary="Structured key sections (Home, About, Products, Contact) for better navigation."
-                      primaryTypographyProps={{
-                        sx: {
-                          fontSize: {
-                            xs: "0.8rem",
-                            sm: "0.85rem",
-                            md: "0.9rem",
-                          },
-                          lineHeight: { xs: 1.3, sm: 1.4, md: 1.5 },
-                        },
-                      }}
-                    />
-                  </ListItem>
-
-                  <ListItem disablePadding sx={{ py: 0.5 }}>
-                    <Link
-                      href="https://theredastudio.com/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      underline="hover"
-                      sx={{
-                        cursor: "pointer",
-                        fontSize: {
-                          xs: "0.75rem",
-                          sm: "0.8rem",
-                          md: "0.85rem",
-                        },
-                        display: "block",
-                        mt: { xs: 0.5, sm: 1 },
-                        wordBreak: "break-all",
-                        color: "primary.main",
-                        "&:hover": {
-                          color: "primary.dark",
-                          textDecoration: "underline",
-                        },
-                      }}
-                    >
-                      https://www.theredastudio.com/
-                    </Link>
-                  </ListItem>
-                </List>
-              </Card>
-
-              <Grid container spacing={5}>
-                <Grid item xs={6}>
-                  <Paper
-                    elevation={5}
-                    sx={{
-                      ml: { xs: 0 },
-                      width: { xs: 280, md: 280 },
-                      height: { xs: 300, md: 230 },
-                      borderRadius: 2,
-                      overflow: "hidden",
-                      // cursor: "pointer",
-                      transition: "all 0.4s ease",
-                      "&:hover": {
-                        boxShadow: 12,
-                        transform: "translateY(-6px)",
-                      },
-                    }}
-                  >
-                    <Box
-                      component="img"
-                      src={reda2}
-                      sx={{ width: "100%", height: "100%", objectFit: "cover" }}
-                    />
-                  </Paper>
-                </Grid>
-                <Grid item xs={6}>
-                  <Paper
-                    elevation={5}
-                    sx={{
-                      width: { xs: 280, md: 280 },
-                      height: { xs: 300, md: 230 },
-                      borderRadius: 2,
-                      overflow: "hidden",
-                      // cursor: "pointer",
-                      transition: "all 0.4s ease",
-                      "&:hover": {
-                        boxShadow: 12,
-                        transform: "translateY(-6px)",
-                      },
-                    }}
-                  >
-                    <Box
-                      component="img"
-                      src={reda1}
-                      sx={{ width: "100%", height: "100%", objectFit: "cover" }}
-                    />
-                  </Paper>
-                </Grid>
-              </Grid>
-            </Grid>
-          </Grid>
-
-          <Grid
-            container
-            direction="row"
-            spacing={8}
-            mt={2}
-            alignItems="flex-start"
-          >
-            <Grid item xs={12} md={7} order={{ xs: 2, md: 1 }}>
-              <Grid container direction="column" spacing={3}>
-                <Grid item ml={{ xs: 1, md: 5 }}>
-                  <Paper
-                    elevation={5}
-                    width={{ xs: 400, md: "100%", sm: "85%" }}
-                    sx={{
-                      transition: "all 0.3s ease-in-out",
-                      "&:hover": {
-                        transform: "scale(1.05)",
-                        boxShadow: 10,
-                      },
-                    }}
-                  >
-                    <Box
-                      component="img"
-                      src={agreement}
-                      sx={{
-                        width: { xs: 400, md: "90%" },
-                        ml: { sm: 5 },
-                        height: { xs: 150, md: 150 },
-                        objectFit: "cover",
-                      }}
-                    />
-                  </Paper>
-                </Grid>
-
-                {/* Small Images */}
-                <Grid item container spacing={2} ml={{ xs: 3 }}>
-                  <Grid
-                    item
-                    ml={{ xs: 0, md: 2 }}
-                    sx={{
-                      transition: "all 0.3s ease-in-out",
-                      "&:hover": {
-                        transform: "scale(1.05)",
-                        boxShadow: 10,
-                      },
-                    }}
-                  >
-                    <Paper elevation={5}>
-                      <Box
-                        component="img"
-                        src={apartment}
-                        sx={{
-                          width: { xs: 300, md: 250 },
-                          height: 200,
-                          objectFit: "cover",
-                        }}
-                      />
-                    </Paper>
-                  </Grid>
-
-                  <Grid item>
-                    <Paper
-                      elevation={5}
-                      sx={{
-                        transition: "all 0.3s ease-in-out",
-                        "&:hover": {
-                          transform: "scale(1.05)",
-                          boxShadow: 10,
-                        },
-                      }}
-                    >
-                      <Box
-                        component="img"
-                        src={ams}
-                        sx={{
-                          width: { xs: 300, md: 250 },
-                          height: 200,
-                          objectFit: "cover",
-                        }}
-                      />
-                    </Paper>
-                  </Grid>
-                </Grid>
-              </Grid>
-            </Grid>
-
-            {/* CARD SECTION */}
-            <Grid
-              item
-              xs={12}
-              md={5}
-              order={{ xs: 1, md: 2 }}
-              sx={{ display: "flex", justifyContent: "center" }}
-            >
-              <Card
-                elevation={4}
-                sx={{
-                  p: { xs: 1.5, sm: 2, md: 3 },
-                  width: { xs: "90%", sm: 600, md: 420 },
-                  maxWidth: { xs: "100%", md: 420 },
-                  mx: { xs: "auto", md: "auto" },
-                  ml: { sm: 5 },
-                  mt: { xs: 2, md: 0 },
-                  alignSelf: "center",
-                  transition: "all 0.3s ease-in-out",
-                  "&:hover": {
-                    transform: { xs: "translateY(-4px)", md: "scale(1.05)" },
-                    boxShadow: { xs: 6, md: 10 },
-                  },
-                }}
-              >
-                <Typography
-                  variant="subtitle1"
-                  fontWeight="bold"
-                  sx={{
-                    fontSize: { xs: "0.9rem", sm: "0.95rem", md: "1rem" },
-                    mb: { xs: 0.5, sm: 1 },
-                    textAlign: { xs: "center", sm: "center", md: "center" },
-                  }}
-                >
-                  Apartment Management System (React | MUI)
-                </Typography>
-
-                <List dense>
-                  <ListItem disablePadding sx={{ py: 0.5 }}>
-                    <ListItemIcon sx={{ minWidth: { xs: 32, md: 36 } }}>
-                      <StarBorderIcon fontSize="small" />
-                    </ListItemIcon>
-                    <ListItemText
-                      primary="Improved frontend stability and UI responsiveness."
-                      primaryTypographyProps={{
-                        sx: {
-                          fontSize: {
-                            xs: "0.8rem",
-                            sm: "0.85rem",
-                            md: "0.9rem",
-                          },
-                          lineHeight: { xs: 1.3, sm: 1.4, md: 1.5 },
-                        },
-                      }}
-                    />
-                  </ListItem>
-
-                  <ListItem disablePadding sx={{ py: 0.5 }}>
-                    <ListItemIcon sx={{ minWidth: { xs: 32, md: 36 } }}>
-                      <StarBorderIcon fontSize="small" />
-                    </ListItemIcon>
-                    <ListItemText
-                      primary="Implemented multi-language support."
-                      primaryTypographyProps={{
-                        sx: {
-                          fontSize: {
-                            xs: "0.8rem",
-                            sm: "0.85rem",
-                            md: "0.9rem",
-                          },
-                          lineHeight: { xs: 1.3, sm: 1.4, md: 1.5 },
-                        },
-                      }}
-                    />
-                  </ListItem>
-
-                  <ListItem disablePadding sx={{ py: 0.5 }}>
-                    <ListItemIcon sx={{ minWidth: { xs: 32, md: 36 } }}>
-                      <StarBorderIcon fontSize="small" />
-                    </ListItemIcon>
-                    <ListItemText
-                      primary="Refined UI layout using Material UI."
-                      primaryTypographyProps={{
-                        sx: {
-                          fontSize: {
-                            xs: "0.8rem",
-                            sm: "0.85rem",
-                            md: "0.9rem",
-                          },
-                          lineHeight: { xs: 1.3, sm: 1.4, md: 1.5 },
-                        },
-                      }}
-                    />
-                  </ListItem>
-
-                  <ListItem disablePadding sx={{ py: 0.5 }}>
-                    <ListItemIcon sx={{ minWidth: { xs: 32, md: 36 } }}>
-                      <StarBorderIcon fontSize="small" />
-                    </ListItemIcon>
-                    <ListItemText
-                      primary="Optimized component reusability and reduced redundant renders."
-                      primaryTypographyProps={{
-                        sx: {
-                          fontSize: {
-                            xs: "0.8rem",
-                            sm: "0.85rem",
-                            md: "0.9rem",
-                          },
-                          lineHeight: { xs: 1.3, sm: 1.4, md: 1.5 },
-                        },
-                      }}
-                    />
-                  </ListItem>
-                </List>
-              </Card>
-            </Grid>
-          </Grid>
-        </Box>
-      </Box>
     </Grid>
+  </Grid>
+
+  {/* Card — right side */}
+  <Grid
+    item
+    xs={12}
+    sm={10}
+    md={6}
+    order={{ xs: 1, md: 2 }}
+    sx={{ display: "flex", justifyContent: "center" }}
+  >
+    <Card
+      elevation={4}
+      sx={{
+        p: { xs: 1.5, sm: 2, md: 2 },
+        width: "100%",
+        ml:{md:10,sm:0,xs:0},
+        maxWidth: { xs: "100%", sm: "100%", md: 550 },
+        background: "linear-gradient(135deg,rgb(88, 47, 236),rgb(249, 88, 88))",
+        transition: "all 0.3s ease-in-out",
+        "&:hover": {
+          transform: { xs: "translateY(-4px)", md: "scale(1.05)" },
+          boxShadow: { xs: 6, md: 10 },
+        },
+      }}
+    >
+      <Typography
+        variant="subtitle1"
+        fontWeight="bold"
+        sx={{
+          fontSize: { xs: "0.9rem", sm: "0.95rem", md: "1rem" },
+          mb: { xs: 0.5, sm: 1 },
+          textAlign: "center",
+          color: "white",
+          pt: { xs: 1, sm: 1, md: 1 },
+        }}
+      >
+        Apartment Management System (React | MUI)
+      </Typography>
+      <List dense>
+        {[
+          "Improved frontend stability and UI responsiveness.",
+          "Implemented multi-language support.",
+          "Refined UI layout using Material UI components and theming.",
+          "Optimized component reusability and reduced redundant renders.",
+          "Built tenant and owner dashboards with real-time data updates.",
+          "Developed maintenance request module with status tracking and notifications.",
+          "Integrated payment summary views for rent and dues management.",
+          "Implemented role-based access for Admin, Owner, and Tenant users.",
+        ].map((text, i) => (
+          <ListItem key={i} disablePadding sx={{ py: 0.5 }}>
+            <ListItemIcon sx={{ minWidth: { xs: 32, md: 36 } }}>
+              <StarBorderIcon fontSize="small" sx={{ color: "white" }} />
+            </ListItemIcon>
+            <ListItemText
+              primary={text}
+              primaryTypographyProps={{
+                sx: {
+                  fontSize: { xs: "0.8rem", sm: "0.85rem", md: "0.9rem" },
+                  color: "white",
+                  lineHeight: { xs: 1.3, sm: 1.4, md: 1.5 },
+                },
+              }}
+            />
+          </ListItem>
+        ))}
+      </List>
+      <ListItem disablePadding sx={{ mt: 1 }}>
+        <Link
+          href="https://www.liveez.in/web"
+          target="_blank"
+          underline="hover"
+          sx={{
+            fontSize: { xs: "0.8rem", sm: "0.85rem", md: "1rem" },
+            color: "#e0f2fe",
+            wordBreak: "break-all",
+          }}
+        >
+          https://www.liveez.in/web
+        </Link>
+      </ListItem>
+    </Card>
+  </Grid>
+</Grid>
+
+      {/* ─── PROJECT 5 : Moogambigai Enterprises ────────────────────── */}
+      <Grid
+        container
+        justifyContent="center"
+        p={{ xs: 1, sm: 2 }}
+        mt={4}
+      >
+        <Grid item xs={12} sm={10} md={8} lg={7}>
+          <Card
+            elevation={4}
+            sx={{
+              p: { xs: 1.5, sm: 2, md: 3 },
+              width: {md:1000,xs:"100%",sm:"100%"},
+              background: "linear-gradient(135deg, rgb(16, 185, 129), rgb(42, 86, 233))",
+              transition: "all 0.3s ease-in-out",
+              "&:hover": {
+                transform: { xs: "translateY(-4px)", md: "scale(1.02)" },
+                boxShadow: { xs: 6, md: 10 },
+              },
+            }}
+          >
+            <Box display="flex" alignItems="center" justifyContent="center" gap={1} mb={1}>
+              <BusinessIcon sx={{ color: "white" }} />
+              <Typography
+                variant="subtitle1"
+                fontWeight="bold"
+                sx={{
+                  fontSize: { xs: "0.9rem", sm: "0.95rem", md: "1rem" },
+                  color: "white",
+                  textAlign: "center",
+                }}
+              >
+                Moogambigai Enterprises (Freelancing Project)
+              </Typography>
+            </Box>
+            <List dense>
+              {[
+                "Developed a responsive business website for wiring harness services.",
+                "Showcased automotive, industrial, and custom wiring solutions.",
+                "Implemented modern UI with smooth navigation and clean layout.",
+                "Optimized for mobile responsiveness and SEO visibility.",
+              ].map((text, i) => (
+                <ListItem key={i} disablePadding sx={{ py: 0.5 }}>
+                  <ListItemIcon sx={{ minWidth: 32 }}>
+                    <StarBorderIcon sx={{ color: "white" }} fontSize="small" />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary={text}
+                    primaryTypographyProps={{
+                      sx: {
+                        fontSize: { xs: "0.8rem", sm: "0.85rem", md: "0.9rem" },
+                        color: "white",
+                      },
+                    }}
+                  />
+                </ListItem>
+              ))}
+              <ListItem disablePadding sx={{ mt: 1 }}>
+                <Link
+                  href="https://moogambigaienterprise.com/"
+                  target="_blank"
+                  underline="hover"
+                  sx={{
+                    fontSize: { xs: "0.8rem", sm: "0.85rem", md: "1rem" },
+                    color: "#e0f2fe",
+                    wordBreak: "break-all",
+                  }}
+                >
+                  https://moogambigaienterprise.com/
+                </Link>
+              </ListItem>
+            </List>
+          </Card>
+        </Grid>
+      </Grid>
+
+    </Box>
+  </Box>
+</Grid>
+
   );
 }
 
 export default Projects;
+
