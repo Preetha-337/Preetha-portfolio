@@ -19,7 +19,7 @@ function Navbar() {
       
         <IconButton
           onClick={() => setOpen(true)}
-          sx={{ display: { xs: "block", md: "none" }, color: "white" }}
+          sx={{ display: { xs: "block", md: "none" }, color: "black" }}
         >
           <MenuIcon fontSize="large" />
         </IconButton>
@@ -36,7 +36,7 @@ function Navbar() {
             <ListItem key={item.text} button component="a" href={item.link}>
               <ListItemText
                 primary={item.text}
-                sx={{ color: "white" }} 
+                sx={{    color: "#1b095b",    }} 
               />
             </ListItem>
           ))}

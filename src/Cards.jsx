@@ -1,9 +1,9 @@
 import React from "react";
 import { Box, Card, CardContent, Typography, Grid } from "@mui/material";
 import react from "./assets/react.png";
-import laptop from "./assets/laptop.png";
+import laptop from "./assets/laptop.jpg";
 import coding from "./assets/coding.png";
-import laptop2 from "./assets/laptop2.png";
+import laptop2 from "./assets/laptop2.jpg";
 import pattern6 from "./assets/pattern6.png";
 
 function Cards() {
@@ -30,7 +30,7 @@ function Cards() {
     >
       {/* Animated React Image */}
       <Box sx={{ position: "relative", zIndex: 1, width: "100%", overflow: "hidden" }}>
-        <Box
+        {/* <Box
           component="img"
           src={react}
           sx={{
@@ -50,7 +50,7 @@ function Cards() {
               },
             },
           }}
-        />
+        /> */}
       </Box>
 
       {/* Main Content Section */}
@@ -68,46 +68,29 @@ function Cards() {
           py: { xs: 2, sm: 3, md: 4 },
         }}
       >
-        {/* Quote */}
-        <Typography
-          variant="h6"
-          fontWeight={{md:"bold",xs:"bold",sm:"bold"}}
-          sx={{
-            background: "linear-gradient(90deg, #e4e7f5, #d3b9ed)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            letterSpacing: 0.8,
-            fontSize: { 
-              xs: "1rem", 
-              sm: "1.3rem", 
-              md: "1.8rem" 
-            },
-         
-            lineHeight: { xs: 1.3, sm: 1.4, md: 1.5 },
-            px: { xs: 1, sm: 2, md: 0 },
-          }}
-        >
-          Turning ideas into intuitive React experiences
-        </Typography>
+      
 
         {/* Description */}
-        <Typography
-          variant="body2"
-          sx={{
-            color: "white",
-            maxWidth: { xs: "95%", sm: "80%", md: 500 },
-            fontSize: { 
-              xs: "0.85rem", 
-              sm: "0.95rem", 
-              md: "1.1rem" 
-            },
-            lineHeight: { xs: 1.4, sm: 1.5, md: 1.6 },
-            mb: { xs: 1, sm: 2, md: 3 },
-          }}
-        >
-          Crafting responsive, scalable, and user-focused interfaces with
-          modern frontend technologies.
-        </Typography>
+    <Typography
+  variant="body2"
+  sx={{
+    color: "#444441", // softer than black
+    maxWidth: { xs: "95%", sm: "80%", md: 500 },
+
+    fontSize: {
+      xs: "0.95rem",
+      sm: "1.05rem",
+      md: "1.15rem",
+    },
+
+    lineHeight: { xs: 1.5, sm: 1.6, md: 1.7 },
+    mb: { xs: 1, sm: 2, md: 3 },
+    fontWeight: 400,
+  }}
+>
+  Crafting responsive, scalable, and user-focused interfaces with
+  modern frontend technologies.
+</Typography>
 
         {/* Images Grid */}
         <Grid
@@ -117,7 +100,7 @@ function Cards() {
           alignItems="center"
           sx={{ mt: { xs: 1, sm: 2, md: 4 } }}
         >
-          {[coding, laptop, laptop2].map((img, index) => (
+          {[laptop].map((img, index) => (
             <Grid
               item
               key={index}
@@ -134,16 +117,16 @@ function Cards() {
                 src={img}
                 sx={{
                   width: { 
-                    xs: 100, 
-                    sm: 180, 
-                    md: 200 
+                    xs: 500, 
+                    sm: 480, 
+                    md: 700 
                   },
                   height: { 
-                    xs: 100, 
-                    sm: 180, 
-                    md: 200 
+                    xs: 200, 
+                    sm: 200, 
+                    md: 500 
                   },
-                  borderRadius: index === 1 ? "50%" : "20%",
+                  // borderRadius: index === 1 ? "20%" : "20%",
                   objectFit: "cover",
                   opacity: 0.8,
                   boxShadow: "0px 8px 20px rgba(0,0,0,0.2)",
@@ -186,7 +169,7 @@ function Cards() {
                 md: "30px" 
               },
               animation: "moveLeftRight 15s ease-in-out infinite alternate",
-              background: "linear-gradient(135deg, #764ba2, #667eea)",
+              background: "linear-gradient(135deg,#26a8f9, #eeaae9)",
               color: "#fff",
               transition: "all 0.4s ease",
               position: "relative",

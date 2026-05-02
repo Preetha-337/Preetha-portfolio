@@ -11,31 +11,39 @@ function Quotes() {
 
   const quoteStyles = [
     {
-      bg: "linear-gradient(135deg, #3b0a1e, #6b1535, #4a0d28)",
-      border: "rgba(244,63,94,0.3)",
-      color: "#fda4af",
-      glow: "rgba(244,63,94,0.22)",
+      bg: "#F8FAFF",
+      border: "#B5D4F4",
+      color: "#185FA5",
+      ringColor: "#85B7EB",
+      quoteMarkColor: "#378ADD",
+      glow: "rgba(55,138,221,0.12)",
       delay: "0s",
     },
     {
-      bg: "linear-gradient(135deg, #2e1a00, #5c3500, #3d2200)",
-      border: "rgba(251,146,60,0.3)",
-      color: "#fdba74",
-      glow: "rgba(251,146,60,0.2)",
+      bg: "#F3F9EC",
+      border: "#9FE1CB",
+      color: "#0F6E56",
+      ringColor: "#5DCAA5",
+      quoteMarkColor: "#1D9E75",
+      glow: "rgba(29,158,117,0.12)",
       delay: "0.5s",
     },
     {
-      bg: "linear-gradient(135deg, #1e0a3b, #3d1470, #280a52)",
-      border: "rgba(167,139,250,0.3)",
-      color: "#c4b5fd",
-      glow: "rgba(167,139,250,0.2)",
+      bg: "#F5F3FF",
+      border: "#CECBF6",
+      color: "#534AB7",
+      ringColor: "#AFA9EC",
+      quoteMarkColor: "#7F77DD",
+      glow: "rgba(127,119,221,0.12)",
       delay: "1s",
     },
     {
-      bg: "linear-gradient(135deg, #001e2e, #00365a, #002040)",
-      border: "rgba(34,211,238,0.28)",
-      color: "#67e8f9",
-      glow: "rgba(34,211,238,0.18)",
+      bg: "#FFF8F0",
+      border: "#FAC775",
+      color: "#854F0B",
+      ringColor: "#EF9F27",
+      quoteMarkColor: "#BA7517",
+      glow: "rgba(186,117,23,0.12)",
       delay: "1.5s",
     },
   ];
@@ -79,14 +87,32 @@ function Quotes() {
                 <Box
                   sx={{
                     position: "absolute",
-                    inset: "-6px",
+                    inset: "-8px",
                     borderRadius: "50%",
-                    border: "1.5px dashed rgba(255,255,255,0.1)",
+                    border: `1.5px dashed ${s.ringColor}`,
+                    opacity: 0.5,
                     animation: "spinRing 12s linear infinite",
                     pointerEvents: "none",
                     "@keyframes spinRing": {
                       from: { transform: "rotate(0deg)" },
                       to: { transform: "rotate(360deg)" },
+                    },
+                  }}
+                />
+
+                {/* Counter spinning inner ring */}
+                <Box
+                  sx={{
+                    position: "absolute",
+                    inset: "-2px",
+                    borderRadius: "50%",
+                    border: `1px dotted ${s.border}`,
+                    opacity: 0.6,
+                    animation: "spinRingReverse 18s linear infinite",
+                    pointerEvents: "none",
+                    "@keyframes spinRingReverse": {
+                      from: { transform: "rotate(360deg)" },
+                      to: { transform: "rotate(0deg)" },
                     },
                   }}
                 />
@@ -98,9 +124,8 @@ function Quotes() {
                     height: { xs: 110, sm: 120, md: 148 },
                     borderRadius: "50%",
                     background: s.bg,
-                    backgroundSize: "200% 200%",
                     border: `1px solid ${s.border}`,
-                    boxShadow: `0 10px 30px ${s.glow}`,
+                    boxShadow: `0 8px 28px ${s.glow}`,
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -109,19 +134,27 @@ function Quotes() {
                     position: "relative",
                     overflow: "hidden",
                     animation: `floatBall 4s ease-in-out ${s.delay} infinite`,
-                    transition: "transform 0.3s ease",
-                    "&:hover": { transform: "scale(1.08)" },
+                    transition: "all 0.3s ease",
+                    "&:hover": {
+                      transform: "scale(1.08)",
+                      boxShadow: `0 14px 36px ${s.glow}`,
+                      borderColor: s.ringColor,
+                    },
+
+                    // Subtle inner shine
                     "&::after": {
                       content: '""',
                       position: "absolute",
                       top: "8%",
                       left: "12%",
                       width: "40%",
-                      height: "30%",
-                      background: "rgba(255,255,255,0.09)",
+                      height: "28%",
+                      background: "rgba(255,255,255,0.55)",
                       borderRadius: "50%",
-                      filter: "blur(4px)",
+                      filter: "blur(5px)",
+                      pointerEvents: "none",
                     },
+
                     "@keyframes floatBall": {
                       "0%, 100%": { transform: "translateY(0px)" },
                       "50%": { transform: "translateY(-7px)" },
@@ -132,13 +165,14 @@ function Quotes() {
                   <Typography
                     sx={{
                       position: "absolute",
-                      top: "10px",
-                      left: "16px",
-                      fontSize: "32px",
-                      opacity: 0.12,
-                      color: "#fff",
+                      top: "8px",
+                      left: "14px",
+                      fontSize: "36px",
+                      opacity: 0.18,
+                      color: s.quoteMarkColor,
                       fontFamily: "Georgia, serif",
                       lineHeight: 1,
+                      fontWeight: "bold",
                     }}
                   >
                     "
@@ -147,11 +181,12 @@ function Quotes() {
                   <Typography
                     sx={{
                       color: s.color,
-                      fontWeight: "bold",
-                      fontSize: { xs: "0.7rem", sm: "0.8rem", md: "0.85rem" },
-                      lineHeight: { xs: 1.3, md: 1.45 },
+                      fontWeight: 600,
+                      fontSize: { xs: "0.68rem", sm: "0.78rem", md: "0.83rem" },
+                      lineHeight: { xs: 1.35, md: 1.5 },
                       position: "relative",
                       zIndex: 1,
+                      letterSpacing: "0.01em",
                     }}
                   >
                     "{quote}"

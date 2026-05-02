@@ -9,8 +9,9 @@ import Navbar from "./Navbar";
 import Strength from "./Strength";
 import Quotes from "./Quotes";
 import Cards from "./Cards";
-import background from "./assets/background.mp4"
-
+import Contact from "./Contact";
+import Type from "./Type";
+import Type2 from "./Type2"
 function AllData() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
@@ -25,54 +26,43 @@ function AllData() {
         maxWidth: "100vw",
         left: 0,
         right: 0,
+        backgroundColor: "#faf7f2",  // cream white base
       }}
     >
-      {/* Fixed Video Background - Reduced Zoom */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        style={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          objectPosition: "center",
-          transform: "scale(1)",
-          zIndex: -1,
-        }}
-      >
-        <source src={background} type="video/mp4" />
-      </video>
-
-      {/* Fixed AppBar with responsive settings */}
-      <AppBar 
+      {/* Fixed AppBar */}
+      <AppBar
         position="fixed"
-        sx={{ 
+        elevation={0}
+        sx={{
           top: 0,
           left: 0,
           right: 0,
           width: "100vw",
-          background: "linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9))",
-          backdropFilter: "blur(10px)",
+          background: "rgba(250, 247, 242, 0.88)",  // cream with transparency
+          backdropFilter: "blur(12px)",
+          borderBottom: "1px solid rgba(180, 160, 130, 0.2)",
           zIndex: 1200,
         }}
       >
-        <Toolbar sx={{ 
-          display: "flex", 
-          justifyContent: "space-between",
-          minHeight: { xs: 56, sm: 64 },
-          px: { xs: 2, sm: 3 },
-          width: "100%",
-          maxWidth: "100%",
-        }}>
-          <Typography 
-            variant={isMobile ? "subtitle1" : "h6"} 
+        <Toolbar
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            minHeight: { xs: 56, sm: 64 },
+            px: { xs: 2, sm: 3 },
+            width: "100%",
+            maxWidth: "100%",
+          }}
+        >
+          <Typography
+            variant={isMobile ? "subtitle1" : "h6"}
             component="div"
-            sx={{ fontSize: { xs: "1rem", sm: "1.25rem" }, color: "white" }}
+            sx={{
+              fontSize: { xs: "1rem", sm: "1.25rem" },
+              color: "#1b095b",           // warm dark brown for name
+              fontWeight: 600,
+              letterSpacing: "0.02em",
+            }}
           >
             Preetha T
           </Typography>
@@ -82,17 +72,20 @@ function AllData() {
         </Toolbar>
       </AppBar>
 
-      {/* Add padding to account for AppBar height */}
-      <Box sx={{ 
-        pt: { xs: "56px", sm: "64px" },
-        width: "100vw",
-        maxWidth: "100vw",
-        overflowX: "hidden",
-        position: "relative",
-        left: 0,
-        right: 0,
-      }}>
-        <Container 
+      {/* Main content area */}
+      <Box
+        sx={{
+          pt: { xs: "56px", sm: "64px" },
+          width: "100vw",
+          maxWidth: "100vw",
+          overflowX: "hidden",
+          position: "relative",
+          left: 0,
+          right: 0,
+          backgroundColor: "#faf7f2",    // cream white throughout
+        }}
+      >
+        <Container
           maxWidth={false}
           disableGutters
           sx={{
@@ -104,20 +97,27 @@ function AllData() {
             "& > *": {
               width: "100%",
               maxWidth: "100%",
-            }
+            },
           }}
         >
-          <Stack spacing={4} sx={{ 
-            width: "100%", 
-            maxWidth: "100%",
-            px: { xs: 2, sm: 3, md: 4 },
-          }}>
+          <Stack
+            spacing={4}
+            sx={{
+              width: "100%",
+              maxWidth: "100%",
+              px: { xs: 2, sm: 3, md: 4 },
+              pb: 6,
+            }}
+          >
+            <Type/>
             <Introduction />
+            <Contact/>
             <Education />
             <Experience />
             <Quotes />
             <Projects />
             <Skills />
+            <Type2/>
             <Cards />
             <Strength />
           </Stack>
