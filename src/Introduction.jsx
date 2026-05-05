@@ -73,7 +73,7 @@ function Introduction() {
               width: "fit-content",
 
               "&:hover": {
-                background: "#2f73c9",
+                background: "#300a6d",
               },
             }}
           >
