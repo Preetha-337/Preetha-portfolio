@@ -82,7 +82,7 @@ function AllData() {
           position: "relative",
           left: 0,
           right: 0,
-          backgroundColor: "#909ee3",    // cream white throughout
+          backgroundColor: "#eff1e2",    // cream white throughout
         }}
       >
         <Container

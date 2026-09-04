@@ -164,7 +164,7 @@ export default function Strength() {
       {/* Subtitle */}
       <Typography
         sx={{
-          fontSize: { xs: "0.85rem", md: "1.5rem",sm:"1.5rem" },
+          fontSize: { xs: "0.85rem", md: "1.5rem", sm: "1.5rem" },
           color: "#ffffff",
           textAlign: "center",
           mb: 6,
@@ -192,7 +192,7 @@ export default function Strength() {
               sx={{
                 height: { xs: 180, md: 200 },
                 background: s.bg,
-                width:{xs:200,md:250,sm:150},
+                width: { xs: 200, md: 250, sm: 150 },
                 border: `0.5px solid ${s.border}`,
                 borderRadius: "20px",
                 display: "flex",
@@ -208,7 +208,9 @@ export default function Strength() {
                 "&::before": {
                   content: '""',
                   position: "absolute",
-                  top: 0, left: 0, right: 0,
+                  top: 0,
+                  left: 0,
+                  right: 0,
                   height: "2px",
                   background: `linear-gradient(90deg, transparent, ${s.border}, transparent)`,
                   backgroundSize: "200% 100%",
